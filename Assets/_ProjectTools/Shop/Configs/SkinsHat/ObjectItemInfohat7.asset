@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8109fd9a0e58cab4c82657f675d66349, type: 3}
+  m_Name: ObjectItemInfohat7
+  m_EditorClassIdentifier: 
+  Id: -287120
+  ItemType: 3
+  CashType: 0
+  Price: 1200
+  Icon: {fileID: 21300000, guid: 6af54db8f605bac45b4a6a3e287c5163, type: 3}
+  ShopPreview: {fileID: 1077116835758825044, guid: dbb943ec381883e49a9dfc812305c046, type: 3}
+  YanId: 0
+  IsDynamic: 1
+  MainMenuPreview: {fileID: 2327261089008856011, guid: 4e548e2372796ca48a32365898c91666, type: 3}
