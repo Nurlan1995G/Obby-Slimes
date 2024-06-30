@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709d523d47211254c8dc7510d4492845, type: 3}
+  m_Name: ShopContent
+  m_EditorClassIdentifier: 
+  _pathSkinConfig: Assets/Game/LevelTools/Shop/Configs/Skins
+  _pathObjectConfig: Assets/Game/LevelTools/Shop/Configs/Object
+  _pathTrailConfig: Assets/Game/LevelTools/Shop/Configs/Trails
+  _pathAnimalConfig: Assets/Game/LevelTools/Shop/Configs/Animals
+  _pathSoftConfig: Assets/Game/LevelTools/Shop/Configs/Soft
+  _skinItemInfos:
+  - {fileID: 11400000, guid: 58d664d421328b542a5f2ab599be00a6, type: 2}
+  - {fileID: 11400000, guid: 9b241e020af34b643b623039741d14b8, type: 2}
+  - {fileID: 11400000, guid: f07c69aaf3809a640a5ca077bc239ca5, type: 2}
+  - {fileID: 11400000, guid: e385f9b8b1b638e48a862d52bfcfa286, type: 2}
+  - {fileID: 11400000, guid: dfb9adffbac8c5a419f22ec7c9af75e5, type: 2}
+  - {fileID: 11400000, guid: 2c5c5b28de20aec46ac932be6e420f1a, type: 2}
+  _objectItemInfos:
+  - {fileID: 11400000, guid: e84f189209a92f2469ee296a1e535692, type: 2}
+  - {fileID: 11400000, guid: a18b3c71f15087b4296d9f1bc7eb24b0, type: 2}
+  - {fileID: 11400000, guid: 9d3bc6b3c6c4f7644b2f2881360f0a6c, type: 2}
+  - {fileID: 11400000, guid: c5047948edb2d194a99e998d6eec55e3, type: 2}
+  - {fileID: 11400000, guid: 843891c133d7e24419fc0edc76d41577, type: 2}
+  - {fileID: 11400000, guid: 0f97c4e7d9fcbd847bc31d5a5384af09, type: 2}
+  - {fileID: 11400000, guid: 1454698e4bdb176418a1aaf2828f2f32, type: 2}
+  - {fileID: 11400000, guid: ef5e6c121524b804ab01844c2f02e3b4, type: 2}
+  - {fileID: 11400000, guid: c493b50b4a6af754a9320c80682c57d6, type: 2}
+  - {fileID: 11400000, guid: f0ec8bbd2a254864280ba309b4a95abd, type: 2}
+  - {fileID: 11400000, guid: e6b284c501319804993b61224b5028e0, type: 2}
+  _trailItemInfos: []
+  _animalItemInfos: []
+  _softItemInfos:
+  - {fileID: 11400000, guid: 13855bc4b1956bb4fb4cae8be87f2487, type: 2}
+  - {fileID: 11400000, guid: 5fc53d44e8662ad4e89440eadae8fed5, type: 2}
+  - {fileID: 11400000, guid: 484d95d7b927c2045a1c78ee86ee9128, type: 2}
+  - {fileID: 11400000, guid: f79b5c6eed02fa4429be54b1256c9d43, type: 2}
