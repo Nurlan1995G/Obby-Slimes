@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4649751968580043907, guid: 937c938e41291134faf2627aee0b8003, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 5137095594496138158, guid: 937c938e41291134faf2627aee0b8003, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -271,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564643450098182305, guid: 73421a7d9b3a55645b46638ac2a4e765, type: 3}
       propertyPath: m_BlockingMask.m_Bits
-      value: 119
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6344336118720211435, guid: 73421a7d9b3a55645b46638ac2a4e765, type: 3}
       propertyPath: m_AnchorMax.y
