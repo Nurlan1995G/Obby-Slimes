@@ -65,6 +65,7 @@ public abstract class Shark : MonoBehaviour
     }
 
     public virtual void SetPlayerViewWallet() { }
+    public virtual void SetPlayerViewHeightCoins() { }
 
     public void SetBoxCollider() 
     {
@@ -87,6 +88,7 @@ public abstract class Shark : MonoBehaviour
             ParametrRaising *= 3;
             ScoreLevelBar.IncreasePositionY();
             SetBoxCollider();
+            SetPlayerViewHeightCoins();
         }
     }
 }
