@@ -1,9 +1,11 @@
-﻿using Assets.Project.CodeBase.SharkEnemy;
+﻿using Assets.Project.CodeBase.Player.UI;
+using Assets.Project.CodeBase.SharkEnemy;
 using UnityEngine;
 
 public class PlayerTrigger : MonoBehaviour
 {
     [SerializeField] private PlayerView _playerView;
+    [SerializeField] private EffectCoin _canvasCoinEffect;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +15,7 @@ public class PlayerTrigger : MonoBehaviour
             {
                 _playerView.AddScore(fish.ScoreLevel);
                 fish.Destroys();
+                ShowCoinEffect();   
             }
         }
 
@@ -21,9 +24,15 @@ public class PlayerTrigger : MonoBehaviour
             if(_playerView.ScoreLevel > sharkModel.ScoreLevel && sharkModel.ScoreLevel > 1)
             {
                 _playerView.AddScore(sharkModel.ScoreLevel);
-                Debug.Log("Соприкосновение с ботом");
                 sharkModel.Destroys();
+                ShowCoinEffect();
             }
         }
+    }
+
+    private void ShowCoinEffect()
+    {
+        _canvasCoinEffect.gameObject.SetActive(true);
+        _canvasCoinEffect.IsFadingOut = true;
     }
 }

@@ -9,6 +9,7 @@ public class PlayerView : Shark
 {
     [SerializeField] private PlayerTrigger _playerTrigger;
     [SerializeField] private PlayerMover _mover;
+    [SerializeField] private EffectCoin _effectCoin;
 
     private UIPopup _uiPopup;
     private RespawnShark _respawn;
@@ -59,6 +60,13 @@ public class PlayerView : Shark
         base.SetPlayerViewWallet();
 
         Wallet.Add(15);
+    }
+
+    public override void SetPlayerViewHeightCoins()
+    {
+        base.SetPlayerViewHeightCoins();
+
+        _effectCoin.SetNewInitPosition();
     }
 
     public override string GetSharkName()
