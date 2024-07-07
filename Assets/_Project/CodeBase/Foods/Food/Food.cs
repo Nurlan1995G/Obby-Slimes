@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
-public abstract class Fish : MonoBehaviour
+public abstract class Food : MonoBehaviour
 {
-    [SerializeField] protected ScoreLevelBarFish ScoreLevelBarFish;
-    [field: SerializeField] public GameObject FishScale;
+    [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFish;
+    [field: SerializeField] public GameObject FoodScale;
 
     private Slime _playerView;
 
-    public event Action<Fish> FishDied;
+    public event Action<Food> FishDied;
 
     public int ScoreLevel { get; protected set; }
 

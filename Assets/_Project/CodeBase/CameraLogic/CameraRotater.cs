@@ -21,7 +21,7 @@ namespace Assets.CodeBase.CameraLogic
         private Vector2 _lastDirection;
         private Vector3 _currentMousePosition;
 
-        private List<ScoreLevelBarFish> _scoreLevelBarFishes = new List<ScoreLevelBarFish>();
+        private List<ScoreLevelBarFood> _scoreLevelBarFishes = new List<ScoreLevelBarFood>();
         private float _updateInterval = 1f; 
         private float _nextUpdate;
 
@@ -159,7 +159,7 @@ namespace Assets.CodeBase.CameraLogic
         }
 
         private void UpdateScoreLevelBarFishes() => 
-            _scoreLevelBarFishes.AddRange(FindObjectsOfType<ScoreLevelBarFish>());
+            _scoreLevelBarFishes.AddRange(FindObjectsOfType<ScoreLevelBarFood>());
 
         private void CheckScoreLevelBarFishDistances()
         {

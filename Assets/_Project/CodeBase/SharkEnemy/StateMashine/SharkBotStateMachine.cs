@@ -12,7 +12,7 @@ namespace Assets.Project.CodeBase.SharkEnemy.StateMashine
         private List<IState> _states;
         private IState _currentState;
 
-        public SharkBotStateMachine(NavMeshAgent agent, SharkModel sharkModel, SharkBotData sharkBotConfig, PlayerView playerView, SpawnerFish spawnerFish)
+        public SharkBotStateMachine(NavMeshAgent agent, SharkModel sharkModel, SharkBotData sharkBotConfig, PlayerView playerView, SpawnerFood spawnerFish)
         {
             _states = new List<IState>
             {

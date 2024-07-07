@@ -1,6 +1,6 @@
-﻿public class NapoleonFish : Fish
+﻿public class PurpleFood : Food
 {
-    private int _scoreLevel = 64;
+    private int _scoreLevel = 16;
 
     protected override int WriteScoreLevel() =>
         ScoreLevel = _scoreLevel;

@@ -14,7 +14,7 @@ public class DetectorFish
         _agentMoveState = agentMoveState;
     }
 
-    public void FindToFish(SpawnerFish spawner, Transform transform, NavMeshAgent agent)
+    public void FindToFish(SpawnerFood spawner, Transform transform, NavMeshAgent agent)
     {
         if (spawner == null || spawner.Fishes.Count == 0)
             return;
@@ -30,9 +30,9 @@ public class DetectorFish
         }
     }
 
-    private void SelectToFish(SpawnerFish spawner, Transform transform, ref Transform closestFish, ref float closestDistance)
+    private void SelectToFish(SpawnerFood spawner, Transform transform, ref Transform closestFish, ref float closestDistance)
     {
-        foreach (Fish fish in spawner.Fishes)
+        foreach (Food fish in spawner.Fishes)
         {
             float distance = Vector3.Distance(transform.position, fish.transform.position);
 

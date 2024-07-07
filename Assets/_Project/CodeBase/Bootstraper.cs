@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class Bootstraper : MonoBehaviour
 {
-    [SerializeField] private SpawnerFish _spawner;
-    [SerializeField] private SlimeFoodData _fishStaticData;
+    [SerializeField] private SpawnerFood _spawner;
+    [SerializeField] private FoodStaticData _fishStaticData;
     [SerializeField] private PositionStaticData _positionStaticData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private PlayerView _playerView;
@@ -23,10 +23,10 @@ public class Bootstraper : MonoBehaviour
     private void Awake()
     {
         AssetProvider assetProvider = new AssetProvider();
-        ServesSelectTypeFish random = new ServesSelectTypeFish(_configFish);
+        ServesSelectTypeFood random = new ServesSelectTypeFood(_configFish);
         TopSharksManager topSharksManager = new TopSharksManager();
 
-        _spawner.Construct(new FishFactory(_configFish, assetProvider), random, _playerView, _configFish);
+        _spawner.Construct(new FoodFactory(_configFish, assetProvider), random, _playerView, _configFish);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
         

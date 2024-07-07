@@ -1,4 +1,4 @@
-﻿public class AngelFish : Fish
+﻿public class YellowFood : Food
 {
     private int _scoreLevel = 32;
 

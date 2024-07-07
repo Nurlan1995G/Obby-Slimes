@@ -8,7 +8,7 @@ public class BotSharkView : MonoBehaviour
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private SharkModel _sharkModel;
         
-    private SpawnerFish _spawner;
+    private SpawnerFood _spawner;
     private SharkBotData _sharkBotData;
     private PlayerView _player;
     private SharkBotStateMachine _stateMashine;
@@ -19,7 +19,7 @@ public class BotSharkView : MonoBehaviour
     private void Update() =>
         _stateMashine?.Update();
 
-    public void Construct(SpawnerFish spawner, SharkBotData sharkBotData, PlayerView player, TopSharksManager topSharksManager)
+    public void Construct(SpawnerFood spawner, SharkBotData sharkBotData, PlayerView player, TopSharksManager topSharksManager)
     {
         _spawner = spawner;
         _sharkBotData = sharkBotData;

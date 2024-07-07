@@ -7,7 +7,7 @@ public class TriggerSharkEnemy : MonoBehaviour
  
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.TryGetComponent(out Fish fish))
+        if (other.TryGetComponent(out Food fish))
          {
             if (_sharkModel.ScoreLevel >= fish.ScoreLevel)
             {
