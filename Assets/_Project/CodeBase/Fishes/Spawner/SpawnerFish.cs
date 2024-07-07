@@ -8,7 +8,7 @@ public class SpawnerFish : MonoBehaviour
     private FishFactory _fishFactory;
     private ServesSelectTypeFish _random;
     private PlayerView _playerView;
-    private SpawnerFishData _spawnerFishData;
+    private SpawnerFoodData _spawnerFishData;
 
     private float _nextSpawnTime;
 
@@ -19,14 +19,14 @@ public class SpawnerFish : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= _nextSpawnTime && _fishes.Count < _spawnerFishData.MaxCountFish)
+        if (Time.time >= _nextSpawnTime && _fishes.Count < _spawnerFishData.MaxCountFood)
         {
             _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
             SpawnFishAtRandomPoint();
         }
     }
     
-    public void Construct(FishFactory fishFactory, ServesSelectTypeFish random, PlayerView playerView, ConfigFish configFish)
+    public void Construct(FishFactory fishFactory, ServesSelectTypeFish random, PlayerView playerView, ConfigFood configFish)
     {
         _fishFactory = fishFactory;
         _random = random;

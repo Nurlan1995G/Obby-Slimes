@@ -6,7 +6,7 @@ public abstract class Fish : MonoBehaviour
     [SerializeField] protected ScoreLevelBarFish ScoreLevelBarFish;
     [field: SerializeField] public GameObject FishScale;
 
-    private Shark _playerView;
+    private Slime _playerView;
 
     public event Action<Fish> FishDied;
 
@@ -23,7 +23,7 @@ public abstract class Fish : MonoBehaviour
         UpdateScoreTextColor();
     }
 
-    public void Construct(Shark playerView)
+    public void Construct(Slime playerView)
     {
         _playerView = playerView;
     }

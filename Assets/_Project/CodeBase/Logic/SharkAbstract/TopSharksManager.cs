@@ -3,10 +3,10 @@ using System.Linq;
 
 public class TopSharksManager
 {
-    private List<Shark> _sharks = new List<Shark>();
+    private List<Slime> _sharks = new List<Slime>();
     private TopSharksUI _topSharksUI;
 
-    public void RegisterShark(Shark shark)
+    public void RegisterShark(Slime shark)
     {
         if (!_sharks.Contains(shark))
         {
@@ -15,7 +15,7 @@ public class TopSharksManager
         }
     }
 
-    public void UnregisterShark(Shark shark)
+    public void UnregisterShark(Slime shark)
     {
         if (_sharks.Contains(shark))
         {

@@ -8,13 +8,13 @@ using UnityEngine;
 public class Bootstraper : MonoBehaviour
 {
     [SerializeField] private SpawnerFish _spawner;
-    [SerializeField] private FishStaticData _fishStaticData;
+    [SerializeField] private SlimeFoodData _fishStaticData;
     [SerializeField] private PositionStaticData _positionStaticData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private PlayerView _playerView;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
     [SerializeField] private CameraRotater _cameraRotater;
-    [SerializeField] private ConfigFish _configFish;
+    [SerializeField] private ConfigFood _configFish;
     [SerializeField] private UIPopup _uiPopup;
     [SerializeField] private BoostButtonUI _boostButtonUI;
     [SerializeField] private TopSharksUI _topSharksUI;

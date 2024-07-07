@@ -15,7 +15,7 @@ public class TopSharksUI : MonoBehaviour
         _topSharksManager.SetUI(this);
     }
 
-    public void UpdateSharkList(List<Shark> sharks)
+    public void UpdateSharkList(List<Slime> sharks)
     {
         foreach (var sharkText in _sharkTexts)
         {
