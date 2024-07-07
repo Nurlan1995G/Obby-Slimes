@@ -2,7 +2,7 @@
 
 public class ServesSelectTypeFish
 {
-    private FishStaticData _countFishData;
+    private SlimeFoodData _countFishData;
 
     private int _lunaFish = 0;
     private int _napoleonFish = 0;
@@ -14,7 +14,7 @@ public class ServesSelectTypeFish
     private int _blueSergeon = 0;
     private int _clounFish = 0;
 
-    public ServesSelectTypeFish(ConfigFish configFish) =>
+    public ServesSelectTypeFish(ConfigFood configFish) =>
         _countFishData = configFish.FishStaticData;
 
     public TypeFish SpawnFishes()

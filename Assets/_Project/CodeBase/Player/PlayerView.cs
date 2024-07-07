@@ -5,7 +5,7 @@ using Assets.Project.CodeBase.SharkEnemy;
 using System;
 using UnityEngine;
 
-public class PlayerView : Shark
+public class PlayerView : Slime
 {
     [SerializeField] private PlayerTrigger _playerTrigger;
     [SerializeField] private PlayerMover _mover;

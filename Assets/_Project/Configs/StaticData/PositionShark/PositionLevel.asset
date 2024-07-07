@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78c13ce1307d8c4fba8da1a58efd001, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e50dfafddd66da41b3a211ed3eb571f, type: 3}
   m_Name: PositionLevel
   m_EditorClassIdentifier: 
-  InitSharkOnePosition: {x: 48.800003, y: 6.4, z: -18.8}
-  InitSharkTwoPosition: {x: 169.70001, y: 6.33, z: -13.9}
-  InitSharkThreePosition: {x: 154.90001, y: 6.33, z: 47.5}
-  InitSharkFourPosition: {x: 42.40001, y: 6.33, z: 110.100006}
-  InitSharkFivePosition: {x: 102.90001, y: 6.33, z: 144.6}
-  InitSharkSixPosition: {x: 65.600006, y: 6.33, z: 125.7}
-  InitSharkSevenPosition: {x: 30.5, y: 6.33, z: 45.3}
-  InitPlayerPosition: {x: 83.43898, y: 6.24, z: 3.1294937}
+  InitSharkOnePosition: {x: 1.9000092, y: 0.029999733, z: 175.2}
+  InitSharkTwoPosition: {x: 209.5, y: 0.029999733, z: -37.3}
+  InitSharkThreePosition: {x: 224.5, y: 0.029999733, z: 95.200005}
+  InitSharkFourPosition: {x: 6.200012, y: 0.029999733, z: 95.8}
+  InitSharkFivePosition: {x: 117.700005, y: 0.029999733, z: 184.3}
+  InitSharkSixPosition: {x: 19.200012, y: 0.029999733, z: -32.7}
+  InitSharkSevenPosition: {x: 138.1, y: 0.029999733, z: -35.5}
+  InitPlayerPosition: {x: 117.6, y: 0.3, z: -38.5}

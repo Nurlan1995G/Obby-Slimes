@@ -3,36 +3,30 @@ using UnityEngine;
 
 public class SpawnerFish : MonoBehaviour
 {
-    [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
     [SerializeField] private List<Fish> _fishes = new List<Fish>();
-    //[SerializeField] private List<ScoreLevelBarFish> _scoreLevelBars = new List<ScoreLevelBarFish>();
-
-    //[SerializeField] private ScoreLevelBarFish _container;
 
     private FishFactory _fishFactory;
     private ServesSelectTypeFish _random;
     private PlayerView _playerView;
-    private SpawnerFishData _spawnerFishData;
+    private SpawnerFoodData _spawnerFishData;
 
     private float _nextSpawnTime;
 
     public List<Fish> Fishes => _fishes;
 
-    private void Start()
-    {
+    private void Start() =>
         _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
-    }
 
     private void Update()
     {
-        if (Time.time >= _nextSpawnTime && _fishes.Count < _spawnerFishData.MaxCountFish)
+        if (Time.time >= _nextSpawnTime && _fishes.Count < _spawnerFishData.MaxCountFood)
         {
             _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
             SpawnFishAtRandomPoint();
         }
     }
     
-    public void Construct(FishFactory fishFactory, ServesSelectTypeFish random, PlayerView playerView, ConfigFish configFish)
+    public void Construct(FishFactory fishFactory, ServesSelectTypeFish random, PlayerView playerView, ConfigFood configFish)
     {
         _fishFactory = fishFactory;
         _random = random;
@@ -42,25 +36,17 @@ public class SpawnerFish : MonoBehaviour
 
     private void SpawnFishAtRandomPoint()
     {
-        List<SpawnPoint> availablePoints = _spawnPoints.FindAll(point => !point.IsBusy);
+        float positionX = Random.Range(-33, 260);
+        float positionZ = Random.Range(-80, 215);
 
-        if (availablePoints.Count == 0)
-            return;
-
-        SpawnPoint spawnPoint = availablePoints[UnityEngine.Random.Range(0, availablePoints.Count)];
-        spawnPoint.IsBusy = true;
-
-        Vector3 spawnPosition = spawnPoint.transform.position;
+        Vector3 spawnPosition = new Vector3(positionX, 0, positionZ);
 
         Fish fish = _fishFactory.GetFish(_random.SpawnFishes(), spawnPosition);
         fish.transform.SetParent(this.transform);
 
         AddFish(fish);
 
-        //ScoreLevelBarFish scoreBarObject = Instantiate(_container, transform);
-        //scoreBarObject.Construct(fish);
         fish.Construct(_playerView);
-       //_scoreLevelBars.Add(scoreBarObject);
     }
 
     private void AddFish(Fish fish)
@@ -74,20 +60,5 @@ public class SpawnerFish : MonoBehaviour
         fish.FishDied -= OnFishDied;
         _fishes.Remove(fish);
         _random.RemoveFish(fish);
-
-        SpawnPoint spawnPoint = _spawnPoints.Find(point => point.transform.position == fish.transform.position);
-        
-        if (spawnPoint != null)
-        {
-            spawnPoint.IsBusy = false;
-        }
-
-       /* ScoreLevelBarFish scoreBar = _scoreLevelBars.Find(bar => bar.GetFish() == fish);
-        
-        if (scoreBar != null)
-        {
-            _scoreLevelBars.Remove(scoreBar);
-            Destroy(scoreBar.gameObject);
-        }*/
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Project.CodeBase.SharkEnemy
 {
-    public class SharkModel : Shark
+    public class SharkModel : Slime
     {
         [SerializeField] private TriggerSharkEnemy _triggerSharkEnemy;
         

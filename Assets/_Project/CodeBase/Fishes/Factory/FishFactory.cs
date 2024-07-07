@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FishFactory
 {
-    private readonly FishStaticData _fishStaticData;
+    private readonly SlimeFoodData _fishStaticData;
     private readonly AssetProvider _assetProvider;
 
-    public FishFactory(ConfigFish configFish, AssetProvider assetProvider)
+    public FishFactory(ConfigFood configFish, AssetProvider assetProvider)
     {
         _fishStaticData = configFish.FishStaticData
             ?? throw new ArgumentNullException(nameof(configFish));
@@ -22,13 +22,13 @@ public class FishFactory
         {
             case TypeFish.Hedgehog:
                 fish = _assetProvider.Instantiate(_fishStaticData.HedgehogPrefab, whereToSpawn, Quaternion.identity);
-                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabHedgehog;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePrefabHedgehog;
                 return fish;
 
             case TypeFish.BlueSergeon:
                 fish = _assetProvider.Instantiate(_fishStaticData.BlueSergeonPrefab, whereToSpawn
                         , Quaternion.identity);
-                fish.FishScale.transform.localScale = _fishStaticData.ScalePreefabBlue;
+                fish.FishScale.transform.localScale = _fishStaticData.ScalePrefabBlue;
                 return fish;
 
             case TypeFish.Cloun:
