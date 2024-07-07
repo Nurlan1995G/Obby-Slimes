@@ -7,12 +7,12 @@ public class SpawnPointEnemyBot : MonoBehaviour
     private FactoryShark _factoryShark;
     private PositionStaticData _sharkPositionStaticData;
     private PlayerView _playerView;
-    private SpawnerFish _spawnerFish;
+    private SpawnerFood _spawnerFish;
     private SharkBotData _sharkBotData;
     private TopSharksManager _topSharkManager;
 
     public void Construct(FactoryShark factoryShark, PositionStaticData sharkPositionStaticData,
-        PlayerView playerView, SpawnerFish spawnerFish, GameConfig gameConfig, TopSharksManager topSharksManager)
+        PlayerView playerView, SpawnerFood spawnerFish, GameConfig gameConfig, TopSharksManager topSharksManager)
     { 
         _factoryShark = factoryShark;
         _sharkPositionStaticData = sharkPositionStaticData;

@@ -1,6 +1,6 @@
-﻿public class ClounFish : Fish
+﻿public class GrayFood : Food
 {
-    private int _scoreLevel = 2;
+    private int _scoreLevel = 4;
 
     protected override int WriteScoreLevel() =>
         ScoreLevel = _scoreLevel;

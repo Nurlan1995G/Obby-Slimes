@@ -9,7 +9,7 @@ public class PlayerTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Fish fish))
+        if (other.TryGetComponent(out Food fish))
         {
             if (_playerView.ScoreLevel >= fish.ScoreLevel)
             {

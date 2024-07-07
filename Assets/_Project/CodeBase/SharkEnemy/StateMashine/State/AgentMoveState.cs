@@ -9,11 +9,11 @@ namespace Assets.Project.CodeBase.SharkEnemy.StateMashine.State
         protected NavMeshAgent _agent;
         protected SharkModel _sharkModel;
         private SharkBotData _sharkBotConfig;
-        private readonly SpawnerFish _spawnerFish;
+        private readonly SpawnerFood _spawnerFish;
         private DetecterToObject _detecterToObject;
         private DetectorFish _detectorFish;
 
-        public AgentMoveState (NavMeshAgent agent, SharkModel sharkModel, SharkBotData sharkBotConfig, SpawnerFish spawnerFish)
+        public AgentMoveState (NavMeshAgent agent, SharkModel sharkModel, SharkBotData sharkBotConfig, SpawnerFood spawnerFish)
         {
             _agent = agent;
             _sharkModel = sharkModel;
