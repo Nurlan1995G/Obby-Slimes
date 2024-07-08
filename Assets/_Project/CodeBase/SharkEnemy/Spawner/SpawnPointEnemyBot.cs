@@ -8,7 +8,7 @@ public class SpawnPointEnemyBot : MonoBehaviour
     private PositionStaticData _sharkPositionStaticData;
     private PlayerView _playerView;
     private SpawnerFood _spawnerFish;
-    private SharkBotData _sharkBotData;
+    private SlimeBotData _sharkBotData;
     private TopSharksManager _topSharkManager;
 
     public void Construct(FactoryShark factoryShark, PositionStaticData sharkPositionStaticData,
@@ -89,14 +89,14 @@ public class SpawnPointEnemyBot : MonoBehaviour
         else
             return;
 
-        BotSharkView botShark = CreateSharkScene(position, sharkEnemy);
+        BotSlimeView botShark = CreateSharkScene(position, sharkEnemy);
         botShark.Construct(_spawnerFish, _sharkBotData, _playerView, _topSharkManager);
         botShark.SetNickname(nickName);
     }
 
-    private BotSharkView CreateSharkScene(Vector3 positionShark, string sharkEnemy)
+    private BotSlimeView CreateSharkScene(Vector3 positionShark, string sharkEnemy)
     {
-        BotSharkView botShark = _factoryShark.CreateSharkEnemy(sharkEnemy, positionShark);
+        BotSlimeView botShark = _factoryShark.CreateSharkEnemy(sharkEnemy, positionShark);
         return botShark;
     }
 }

@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Assets.Project.CodeBase.SharkEnemy
 {
-    public class SharkModel : Slime
+    public class SlimeModel : Slime
     {
-        [SerializeField] private TriggerSharkEnemy _triggerSharkEnemy;
+        [SerializeField] private TriggerSlimeEnemy _triggerSharkEnemy;
         
         private string _nickName;
 

@@ -8,7 +8,7 @@ public abstract class Food : MonoBehaviour
 
     private Slime _playerView;
 
-    public event Action<Food> FishDied;
+    public event Action<Food> FoodDied;
 
     public int ScoreLevel { get; protected set; }
 
@@ -30,7 +30,7 @@ public abstract class Food : MonoBehaviour
 
     public void Destroys()
     {
-        FishDied?.Invoke(this);
+        FoodDied?.Invoke(this);
         Destroy(gameObject);
     }
 

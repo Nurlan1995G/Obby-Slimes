@@ -3,12 +3,12 @@ using Assets.Project.CodeBase.SharkEnemy.StateMashine.State;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DetectorFish
+public class DetectorFood
 {
-    private SharkModel _sharkView;
+    private SlimeModel _sharkView;
     private readonly AgentMoveState _agentMoveState;
 
-    public DetectorFish( SharkModel sharkView, AgentMoveState agentMoveState)
+    public DetectorFood( SlimeModel sharkView, AgentMoveState agentMoveState)
     {
         _sharkView = sharkView;
         _agentMoveState = agentMoveState;
@@ -16,23 +16,23 @@ public class DetectorFish
 
     public void FindToFish(SpawnerFood spawner, Transform transform, NavMeshAgent agent)
     {
-        if (spawner == null || spawner.Fishes.Count == 0)
+        if (spawner == null || spawner.Foods.Count == 0)
             return;
 
-        Transform closestFish = null;
+        Transform closestFood = null;
         float closestDistance = Mathf.Infinity;
 
-        SelectToFish(spawner, transform, ref closestFish, ref closestDistance);
+        SelectToFood(spawner, transform, ref closestFood, ref closestDistance);
 
-        if (closestFish != null)
+        if (closestFood != null)
         {
-            agent.SetDestination(closestFish.position);
+            agent.SetDestination(closestFood.position);
         }
     }
 
-    private void SelectToFish(SpawnerFood spawner, Transform transform, ref Transform closestFish, ref float closestDistance)
+    private void SelectToFood(SpawnerFood spawner, Transform transform, ref Transform closestFish, ref float closestDistance)
     {
-        foreach (Food fish in spawner.Fishes)
+        foreach (Food fish in spawner.Foods)
         {
             float distance = Vector3.Distance(transform.position, fish.transform.position);
 

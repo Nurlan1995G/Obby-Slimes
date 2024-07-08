@@ -12,7 +12,7 @@ public class SpawnerFood : MonoBehaviour
 
     private float _nextSpawnTime;
 
-    public List<Food> Fishes => _foods;
+    public List<Food> Foods => _foods;
 
     private void Start() =>
         _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
@@ -51,13 +51,13 @@ public class SpawnerFood : MonoBehaviour
 
     private void AddFood(Food food)
     {
-        food.FishDied += OnFoodDied;
+        food.FoodDied += OnFoodDied;
         _foods.Add(food);
     }
 
     private void OnFoodDied(Food food)
     {
-        food.FishDied -= OnFoodDied;
+        food.FoodDied -= OnFoodDied;
         _foods.Remove(food);
         _random.RemoveFood(food);
     }

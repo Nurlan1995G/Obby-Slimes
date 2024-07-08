@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameConfig : ScriptableObject
 {
     public PlayerData PlayerData;
-    public SharkBotData SharkBotData;
+    public SlimeBotData SharkBotData;
     public CameraRotateData CameraRotateData;
 }
 
@@ -21,7 +21,7 @@ public class PlayerData
 }
 
 [Serializable]
-public class SharkBotData
+public class SlimeBotData
 {
     public float MoveSpeed;
     public float RotateSpeed;

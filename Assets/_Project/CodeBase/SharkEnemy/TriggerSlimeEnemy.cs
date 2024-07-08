@@ -1,9 +1,9 @@
 ﻿using Assets.Project.CodeBase.SharkEnemy;
 using UnityEngine;
 
-public class TriggerSharkEnemy : MonoBehaviour
+public class TriggerSlimeEnemy : MonoBehaviour
 {
-    [SerializeField] private SharkModel _sharkModel;
+    [SerializeField] private SlimeModel _sharkModel;
  
     private void OnTriggerEnter(Collider other) 
     {
@@ -25,7 +25,7 @@ public class TriggerSharkEnemy : MonoBehaviour
             }
          }
 
-        if (other.TryGetComponent(out SharkModel targetSharkModel))
+        if (other.TryGetComponent(out SlimeModel targetSharkModel))
         {
             if (_sharkModel.ScoreLevel > targetSharkModel.ScoreLevel && _sharkModel != targetSharkModel
                 && targetSharkModel.ScoreLevel > 1)

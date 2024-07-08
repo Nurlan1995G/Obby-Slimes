@@ -29,7 +29,7 @@ public class PlayerView : Slime
         _mover.Construct(gameConfig.PlayerData, boostButtonUI);
     }
 
-    public void Destroys(SharkModel killerShark = null)
+    public void Destroys(SlimeModel killerShark = null)
     {
         PlayerDied?.Invoke(this);
         _soundhandler.PlayLose();
