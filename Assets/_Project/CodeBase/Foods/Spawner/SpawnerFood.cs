@@ -11,14 +11,21 @@ public class SpawnerFood : MonoBehaviour
     private SpawnerFoodData _spawnerFishData;
 
     private float _nextSpawnTime;
+    private int _countMaxFood;
 
     public List<Food> Foods => _foods;
 
-    private void Start() =>
+    private void Start()
+    {
         _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
+        _countMaxFood = _foodFactory.GetCountMaxFood();
+    }
 
     private void Update()
     {
+        if (_countMaxFood == _foods.Count)
+            return;
+
         if (Time.time >= _nextSpawnTime && _foods.Count < _spawnerFishData.MaxCountFood)
         {
             _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;

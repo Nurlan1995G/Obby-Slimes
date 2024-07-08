@@ -73,4 +73,11 @@ public class FoodFactory
                     throw new InvalidOperationException(nameof(foodType));
         }
     }
+
+    public int GetCountMaxFood()
+    {
+        int countFood = _foodStaticData.MaxCountBlueFood + _foodStaticData.MaxCountGrayFood + _foodStaticData.MaxCountGreenFood + _foodStaticData.MaxCountOrangeFood + _foodStaticData.MaxCountPinkFood + _foodStaticData.MaxCountPurpleFood + _foodStaticData.MaxCountRedFood + _foodStaticData.MaxCountYellowFood;
+
+        return countFood;
+    }
 }
