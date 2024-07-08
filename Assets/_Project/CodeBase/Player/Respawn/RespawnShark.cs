@@ -7,10 +7,10 @@ namespace Assets.Project.CodeBase.Player.Respawn
     {
         private UIPopup _uiPopup;
         private PositionStaticData _positionPlayer;
-        private SharkModel _killerShark;
+        private SlimeModel _killerShark;
         private PlayerView _playerView;
 
-        public void SetKillerShark(SharkModel sharkModel, PlayerView sharkPlayer, UIPopup uIPopup)
+        public void SetKillerShark(SlimeModel sharkModel, PlayerView sharkPlayer, UIPopup uIPopup)
         {
             _killerShark = sharkModel;
             _playerView = sharkPlayer;

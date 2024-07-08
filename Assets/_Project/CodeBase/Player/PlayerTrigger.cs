@@ -19,7 +19,7 @@ public class PlayerTrigger : MonoBehaviour
             }
         }
 
-        if(other.TryGetComponent(out SharkModel sharkModel))
+        if(other.TryGetComponent(out SlimeModel sharkModel))
         {
             if(_playerView.ScoreLevel > sharkModel.ScoreLevel && sharkModel.ScoreLevel > 1)
             {

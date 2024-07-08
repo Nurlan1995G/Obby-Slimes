@@ -3,23 +3,23 @@ using Assets.Project.CodeBase.SharkEnemy.StateMashine;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BotSharkView : MonoBehaviour   
+public class BotSlimeView : MonoBehaviour   
 {   
     [SerializeField] private NavMeshAgent _agent;
-    [SerializeField] private SharkModel _sharkModel;
+    [SerializeField] private SlimeModel _sharkModel;
         
     private SpawnerFood _spawner;
-    private SharkBotData _sharkBotData;
+    private SlimeBotData _sharkBotData;
     private PlayerView _player;
-    private SharkBotStateMachine _stateMashine;
+    private SlimeBotStateMachine _stateMashine;
 
     private void Start() =>
-        _stateMashine = new SharkBotStateMachine(_agent, _sharkModel, _sharkBotData, _player, _spawner);
+        _stateMashine = new SlimeBotStateMachine(_agent, _sharkModel, _sharkBotData, _player, _spawner);
 
     private void Update() =>
         _stateMashine?.Update();
 
-    public void Construct(SpawnerFood spawner, SharkBotData sharkBotData, PlayerView player, TopSharksManager topSharksManager)
+    public void Construct(SpawnerFood spawner, SlimeBotData sharkBotData, PlayerView player, TopSharksManager topSharksManager)
     {
         _spawner = spawner;
         _sharkBotData = sharkBotData;

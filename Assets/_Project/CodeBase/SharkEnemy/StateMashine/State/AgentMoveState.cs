@@ -7,13 +7,13 @@ namespace Assets.Project.CodeBase.SharkEnemy.StateMashine.State
     public class AgentMoveState : IState
     {
         protected NavMeshAgent _agent;
-        protected SharkModel _sharkModel;
-        private SharkBotData _sharkBotConfig;
+        protected SlimeModel _sharkModel;
+        private SlimeBotData _sharkBotConfig;
         private readonly SpawnerFood _spawnerFish;
         private DetecterToObject _detecterToObject;
-        private DetectorFish _detectorFish;
+        private DetectorFood _detectorFish;
 
-        public AgentMoveState (NavMeshAgent agent, SharkModel sharkModel, SharkBotData sharkBotConfig, SpawnerFood spawnerFish)
+        public AgentMoveState (NavMeshAgent agent, SlimeModel sharkModel, SlimeBotData sharkBotConfig, SpawnerFood spawnerFish)
         {
             _agent = agent;
             _sharkModel = sharkModel;
@@ -23,7 +23,7 @@ namespace Assets.Project.CodeBase.SharkEnemy.StateMashine.State
             _agent.speed = _sharkBotConfig.MoveSpeed;
 
             _detecterToObject = new DetecterToObject(this, sharkModel,sharkBotConfig);
-            _detectorFish = new DetectorFish(sharkModel,this);
+            _detectorFish = new DetectorFood(sharkModel,this);
         }
 
         public bool IsObjectNotReached(GameObject target, Transform transform)

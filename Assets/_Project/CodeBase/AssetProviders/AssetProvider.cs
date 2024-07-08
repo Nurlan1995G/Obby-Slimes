@@ -7,8 +7,8 @@ namespace Assets.Project.AssetProviders
         public Food Instantiate(Food fish, Vector3 whereToSpawn, Quaternion identity) =>
             Object.Instantiate(fish, whereToSpawn, identity);
 
-        public BotSharkView Instantiate(string path, Vector3 position, Quaternion rotation) =>
-            Object.Instantiate(Resources.Load<BotSharkView>(path), position, rotation);
+        public BotSlimeView Instantiate(string path, Vector3 position, Quaternion rotation) =>
+            Object.Instantiate(Resources.Load<BotSlimeView>(path), position, rotation);
 
         public PlayerView Instantiate<T>(string path, Vector3 position) where T : class =>
             Object.Instantiate(Resources.Load<PlayerView>(path), position, Quaternion.identity);

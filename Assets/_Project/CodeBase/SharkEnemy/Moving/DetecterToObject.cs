@@ -6,14 +6,14 @@ using Assets.Project.AssetProviders;
 public class DetecterToObject
 {
     private readonly AgentMoveState _agentMoveState;
-    private readonly SharkModel _sharkModel;
-    private readonly SharkBotData _sharkBotData;
+    private readonly SlimeModel _sharkModel;
+    private readonly SlimeBotData _sharkBotData;
 
     private float _timeLastDetected;
     private float _cooldownTimer;
     private bool _isChasing = true;
 
-    public DetecterToObject( AgentMoveState agentMoveState,  SharkModel sharkModel, SharkBotData sharkBotData)
+    public DetecterToObject( AgentMoveState agentMoveState,  SlimeModel sharkModel, SlimeBotData sharkBotData)
     {
         _agentMoveState = agentMoveState;
         _sharkModel = sharkModel;
@@ -62,7 +62,7 @@ public class DetecterToObject
 
             if(targetShark != null)
             {
-                SharkModel sharkModel = targetShark.GetComponent<SharkModel>(); 
+                SlimeModel sharkModel = targetShark.GetComponent<SlimeModel>(); 
                 
                 if (sharkModel != _sharkModel)
                 {
@@ -95,8 +95,8 @@ public class DetecterToObject
     {
         if (_isChasing)
         {
-            if (positionShark.GetComponent<SharkModel>().ScoreLevel < _sharkModel.ScoreLevel
-                && positionShark.GetComponent<SharkModel>().ScoreLevel > 1)
+            if (positionShark.GetComponent<SlimeModel>().ScoreLevel < _sharkModel.ScoreLevel
+                && positionShark.GetComponent<SlimeModel>().ScoreLevel > 1)
             {
                 if (_timeLastDetected < _sharkBotData.StoppingTimeChase)
                 {

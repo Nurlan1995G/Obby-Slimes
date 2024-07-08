@@ -7,12 +7,12 @@ using UnityEngine.AI;
 
 namespace Assets.Project.CodeBase.SharkEnemy.StateMashine
 {
-    public class SharkBotStateMachine 
+    public class SlimeBotStateMachine 
     {
         private List<IState> _states;
         private IState _currentState;
 
-        public SharkBotStateMachine(NavMeshAgent agent, SharkModel sharkModel, SharkBotData sharkBotConfig, PlayerView playerView, SpawnerFood spawnerFish)
+        public SlimeBotStateMachine(NavMeshAgent agent, SlimeModel sharkModel, SlimeBotData sharkBotConfig, PlayerView playerView, SpawnerFood spawnerFish)
         {
             _states = new List<IState>
             {
