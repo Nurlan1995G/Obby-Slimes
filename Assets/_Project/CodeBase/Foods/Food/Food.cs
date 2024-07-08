@@ -14,7 +14,7 @@ public abstract class Food : MonoBehaviour
 
     private void Start()
     {
-        WriteScoreLevel();
+        //WriteScoreLevel();
         ScoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
     }
 
@@ -34,7 +34,7 @@ public abstract class Food : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected abstract int WriteScoreLevel();
+    public abstract int WriteScoreLevel(int score);
 
     private void UpdateScoreTextColor()
     {

@@ -14,7 +14,7 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private PlayerView _playerView;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
     [SerializeField] private CameraRotater _cameraRotater;
-    [SerializeField] private ConfigFood _configFish;
+    [SerializeField] private ConfigFood _configFood;
     [SerializeField] private UIPopup _uiPopup;
     [SerializeField] private BoostButtonUI _boostButtonUI;
     [SerializeField] private TopSharksUI _topSharksUI;
@@ -23,10 +23,10 @@ public class Bootstraper : MonoBehaviour
     private void Awake()
     {
         AssetProvider assetProvider = new AssetProvider();
-        ServesSelectTypeFood random = new ServesSelectTypeFood(_configFish);
+        ServesSelectTypeFood random = new ServesSelectTypeFood(_configFood);
         TopSharksManager topSharksManager = new TopSharksManager();
 
-        _spawner.Construct(new FoodFactory(_configFish, assetProvider), random, _playerView, _configFish);
+        _spawner.Construct(new FoodFactory(_configFood, assetProvider), random, _playerView, _configFood);
 
         FactoryShark factoryShark = new FactoryShark(assetProvider);
         

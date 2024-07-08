@@ -56,7 +56,7 @@ public class DetecterToObject
 
     private void FindMissingShark(Transform transform, GameObject targetPlayer)
     {
-        foreach (var sharkTag in AssetAdress.SharkBotsTag)
+        foreach (var sharkTag in AssetAdress.SlimeBotsTag)
         {
             GameObject targetShark = StaticClassLogic.FindObject(sharkTag);
 

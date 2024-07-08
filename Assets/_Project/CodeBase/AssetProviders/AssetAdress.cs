@@ -6,15 +6,15 @@ namespace Assets.Project.AssetProviders
     {
         public const string ScoreLevel = "Score/Level";
         public const string PlayerShark = "Player/Shark";
-        public const string SharkEnemy1 = "SharkEnemy/SharkEnemy1";
-        public const string SharkEnemy2 = "SharkEnemy/SharkEnemy2";
-        public const string SharkEnemy3 = "SharkEnemy/SharkEnemy3";
-        public const string SharkEnemy4 = "SharkEnemy/SharkEnemy4";
-        public const string SharkEnemy5 = "SharkEnemy/SharkEnemy5";
-        public const string SharkEnemy6 = "SharkEnemy/SharkEnemy6";
-        public const string SharkEnemy7 = "SharkEnemy/SharkEnemy7";
+        public const string SlimeEnemy1 = "SlimeEnemies/SlimeEnemyBot1";
+        public const string SlimeEnemy2 = "SlimeEnemies/SlimeEnemyBot2";
+        public const string SlimeEnemy3 = "SlimeEnemies/SlimeEnemyBot3";
+        public const string SlimeEnemy4 = "SlimeEnemies/SlimeEnemyBot4";
+        public const string SlimeEnemy5 = "SlimeEnemies/SlimeEnemyBot5";
+        public const string SlimeEnemy6 = "SlimeEnemies/SlimeEnemyBot6";
+        public const string SlimeEnemy7 = "SlimeEnemies/SlimeEnemyBot7";
 
-        public static readonly List<string> SharkBotsTag = new List<string> { "Shark1", "Shark2", "Shark3", "Shark4","Shark5", "Shark6", "Shark7" };
+        public static readonly List<string> SlimeBotsTag = new List<string> { "Shark1", "Shark2", "Shark3", "Shark4","Shark5", "Shark6", "Shark7" };
         public const string PlayerTag = "Player";
 
         public const string NickPlayer = "Игрок";

@@ -29,7 +29,7 @@ public class SpawnPointEnemyBot : MonoBehaviour
 
     private void FindMissingSharks()
     {
-        foreach (var sharkTag in AssetAdress.SharkBotsTag)
+        foreach (var sharkTag in AssetAdress.SlimeBotsTag)
         {
             GameObject shark = StaticClassLogic.FindObject(sharkTag);
 
@@ -47,43 +47,43 @@ public class SpawnPointEnemyBot : MonoBehaviour
         if (sharkTag == "Shark1")
         {
             position = _sharkPositionStaticData.InitSharkOnePosition;
-            sharkEnemy = AssetAdress.SharkEnemy1;
+            sharkEnemy = AssetAdress.SlimeEnemy1;
             nickName = AssetAdress.NickBot1;
         }
         else if (sharkTag == "Shark2")
         {
             position = _sharkPositionStaticData.InitSharkTwoPosition;
-            sharkEnemy = AssetAdress.SharkEnemy2;
+            sharkEnemy = AssetAdress.SlimeEnemy2;
             nickName = AssetAdress.NickBot2;
         }
         else if (sharkTag == "Shark3")
         {
             position = _sharkPositionStaticData.InitSharkThreePosition;
-            sharkEnemy = AssetAdress.SharkEnemy3;
+            sharkEnemy = AssetAdress.SlimeEnemy3;
             nickName = AssetAdress.NickBot3;
         }
         else if (sharkTag == "Shark4")
         {
             position = _sharkPositionStaticData.InitSharkFourPosition;
-            sharkEnemy = AssetAdress.SharkEnemy4;
+            sharkEnemy = AssetAdress.SlimeEnemy4;
             nickName = AssetAdress.NickBot4;
         }
         else if (sharkTag == "Shark5")
         {
             position = _sharkPositionStaticData.InitSharkFivePosition;
-            sharkEnemy = AssetAdress.SharkEnemy5;
+            sharkEnemy = AssetAdress.SlimeEnemy5;
             nickName = AssetAdress.NickBot5;
         }
         else if (sharkTag == "Shark6")
         {
             position = _sharkPositionStaticData.InitSharkSixPosition;
-            sharkEnemy = AssetAdress.SharkEnemy6;
+            sharkEnemy = AssetAdress.SlimeEnemy6;
             nickName = AssetAdress.NickBot6;
         }
         else if (sharkTag == "Shark7")
         {
             position = _sharkPositionStaticData.InitSharkSevenPosition;
-            sharkEnemy = AssetAdress.SharkEnemy7;
+            sharkEnemy = AssetAdress.SlimeEnemy7;
             nickName = AssetAdress.NickBot7;
         }
         else

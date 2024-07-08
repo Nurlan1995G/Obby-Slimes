@@ -1,7 +1,5 @@
 ﻿public class GrayFood : Food
 {
-    private int _scoreLevel = 4;
-
-    protected override int WriteScoreLevel() =>
-        ScoreLevel = _scoreLevel;
+    public override int WriteScoreLevel(int score) =>
+        ScoreLevel = score;
 }
