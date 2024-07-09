@@ -4,7 +4,7 @@ using System;
 [CreateAssetMenu(fileName = "Food", menuName = "ConfigFood")]
 public class ConfigFood : ScriptableObject
 {
-    public SpawnerFoodData SpawnerFishData;
+    public SpawnerFoodData SpawnerFoodData;
     public FoodStaticData FoodStaticData;
 }
 

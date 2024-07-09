@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e50dfafddd66da41b3a211ed3eb571f, type: 3}
   m_Name: PositionLevel
   m_EditorClassIdentifier: 
-  InitSharkOnePosition: {x: 219.7, y: 0, z: 185.1}
-  InitSharkTwoPosition: {x: 223, y: 0, z: 78.3}
-  InitSharkThreePosition: {x: -11.9, y: 0, z: 180}
-  InitSharkFourPosition: {x: 111.1, y: 0, z: -36.9}
-  InitSharkFivePosition: {x: -7.7, y: 0, z: 73.8}
-  InitSharkSixPosition: {x: 217.4, y: 0, z: -25.5}
-  InitSharkSevenPosition: {x: 110.3, y: 0, z: 193.9}
+  InitSharkOnePosition: {x: 210.2, y: 0, z: 182.1}
+  InitSharkTwoPosition: {x: 229.1, y: 0, z: 65.6}
+  InitSharkThreePosition: {x: -4.9, y: 0, z: 181.4}
+  InitSharkFourPosition: {x: 104, y: 0, z: -42}
+  InitSharkFivePosition: {x: -7.2, y: 0, z: 85.6}
+  InitSharkSixPosition: {x: 228, y: 0, z: -32}
+  InitSharkSevenPosition: {x: 100.2, y: 0, z: 189.4}
   InitPlayerPosition: {x: 117.6, y: 0.3, z: -38.5}

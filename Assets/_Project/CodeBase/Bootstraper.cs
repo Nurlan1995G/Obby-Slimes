@@ -8,12 +8,11 @@ using UnityEngine;
 public class Bootstraper : MonoBehaviour
 {
     [SerializeField] private SpawnerFood _spawner;
-    [SerializeField] private FoodStaticData _fishStaticData;
     [SerializeField] private PositionStaticData _positionStaticData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private PlayerView _playerView;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
-    [SerializeField] private CameraRotater _cameraRotater;
+    [SerializeField] private CameraRotator _cameraRotater;
     [SerializeField] private ConfigFood _configFood;
     [SerializeField] private UIPopup _uiPopup;
     [SerializeField] private BoostButtonUI _boostButtonUI;
@@ -25,20 +24,29 @@ public class Bootstraper : MonoBehaviour
         AssetProvider assetProvider = new AssetProvider();
         ServesSelectTypeFood random = new ServesSelectTypeFood(_configFood);
         TopSharksManager topSharksManager = new TopSharksManager();
+        FactoryShark factoryShark = new FactoryShark(assetProvider);
 
+        InitSpawner(assetProvider, random);
+        WriteSpawnPoint(factoryShark, topSharksManager);
+        InitPlayer(topSharksManager);
+        InitCamera();
+        InitUI(topSharksManager);
+    }
+
+    private void InitSpawner(AssetProvider assetProvider, ServesSelectTypeFood random) =>
         _spawner.Construct(new FoodFactory(_configFood, assetProvider), random, _playerView, _configFood);
 
-        FactoryShark factoryShark = new FactoryShark(assetProvider);
-        
-        WriteSpawnPoint(factoryShark, topSharksManager);
-
-        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler);
-        _playerView.Init(topSharksManager);
-
+    private void InitCamera() =>
         _cameraRotater.Construct(_gameConfig);
 
-        _topSharksUI.Construct(topSharksManager);
+    private void InitPlayer(TopSharksManager topSharksManager)
+    {
+        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler);
+        _playerView.Init(topSharksManager);
     }
+
+    private void InitUI(TopSharksManager topSharksManager) =>
+        _topSharksUI.Construct(topSharksManager);
 
     private void WriteSpawnPoint(FactoryShark factoryShark, TopSharksManager topSharksManager)
     {

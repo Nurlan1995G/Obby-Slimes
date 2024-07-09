@@ -22,6 +22,12 @@ public class ServesSelectTypeFood
 
         while (true)
         {
+            if (_purpleFood < _countFoodData.MaxCountPurpleFood)
+            {
+                _purpleFood++;
+                return typeFood = TypeFood.Purple;
+            }
+
             if (_greenFood < _countFoodData.MaxCountGreenFood)
             {
                 _greenFood++;
@@ -46,11 +52,6 @@ public class ServesSelectTypeFood
                 return typeFood = TypeFood.Gray;
             }
 
-            if (_purpleFood < _countFoodData.MaxCountPurpleFood)
-            {
-                _purpleFood++;
-                return typeFood = TypeFood.Purple;
-            }
 
             if (_pinkFood < _countFoodData.MaxCountPinkFood)
             {
