@@ -8,27 +8,25 @@ public class SpawnerFood : MonoBehaviour
     private FoodFactory _foodFactory;
     private ServesSelectTypeFood _random;
     private PlayerView _playerView;
-    private SpawnerFoodData _spawnerFishData;
+    private SpawnerFoodData _spawnerFoodData;
 
     private float _nextSpawnTime;
-    private int _countMaxFood;
 
     public List<Food> Foods => _foods;
 
     private void Start()
     {
-        _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
-        _countMaxFood = _foodFactory.GetCountMaxFood();
+        _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
+        //_spawnerFoodData.MaxCountFood = _foodFactory.GetCountMaxFood();
+
+        Debug.Log(_spawnerFoodData.MaxCountFood + " - MaxCountFood");
     }
 
     private void Update()
     {
-        if (_countMaxFood == _foods.Count)
-            return;
-
-        if (Time.time >= _nextSpawnTime && _foods.Count < _spawnerFishData.MaxCountFood)
+        if (Time.time >= _nextSpawnTime && _foods.Count < _spawnerFoodData.MaxCountFood)
         {
-            _nextSpawnTime = Time.time + _spawnerFishData.SpawnCooldown;
+            _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
             SpawnFoodAtRandomPoint();
         }
     }
@@ -38,7 +36,7 @@ public class SpawnerFood : MonoBehaviour
         _foodFactory = fishFactory;
         _random = random;
         _playerView = playerView;
-        _spawnerFishData = configFish.SpawnerFishData;
+        _spawnerFoodData = configFish.SpawnerFoodData;
     }
 
     private void SpawnFoodAtRandomPoint()

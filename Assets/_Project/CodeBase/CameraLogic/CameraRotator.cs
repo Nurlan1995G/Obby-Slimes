@@ -1,11 +1,12 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Assets.CodeBase.CameraLogic
 {
-    public class CameraRotater : MonoBehaviour
+    public class CameraRotator : MonoBehaviour
     {
         [SerializeField] private VariableJoystick _variableJoystick;
         [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
@@ -25,12 +26,19 @@ namespace Assets.CodeBase.CameraLogic
         private float _updateInterval = 1f; 
         private float _nextUpdate;
 
+        private Action _rotationCameraAction;
+
         private void Awake()
         {
             _rotateInput = new RotateInput();
             _rotateInput.Enable();
 
             UpdateScoreLevelBarFishes();
+
+            if (Application.isMobilePlatform)
+                _rotationCameraAction = HandleTouchInput;
+            else
+                _rotationCameraAction = ControlRotation;
         }
 
         private void OnEnable() =>
@@ -45,11 +53,8 @@ namespace Assets.CodeBase.CameraLogic
             }
 
             CheckScoreLevelBarFishDistances();
-            
-            if (Application.isMobilePlatform)
-                HandleTouchInput();
-            else
-                ControlRotation();
+
+            _rotationCameraAction.Invoke();
         }
 
         private void OnDisable()
