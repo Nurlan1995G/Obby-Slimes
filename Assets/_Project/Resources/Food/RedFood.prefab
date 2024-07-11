@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5235793014093912703}
+  - {fileID: 1545730965087125667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6491319187417658829
@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19138a1d77a62848be73a67720c953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreLevelBarFish: {fileID: 474043561678843291}
+  ScoreLevelBarFish: {fileID: 6579451216276797255}
   FoodScale: {fileID: 3465367651141787839}
---- !u!1001 &4446230711885359587
+--- !u!1001 &6948741244281877311
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -159,11 +159,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -199,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -218,10 +218,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
---- !u!114 &474043561678843291 stripped
+--- !u!224 &1545730965087125667 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
+  m_PrefabInstance: {fileID: 6948741244281877311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6579451216276797255 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4260417745557275768, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
-  m_PrefabInstance: {fileID: 4446230711885359587}
+  m_PrefabInstance: {fileID: 6948741244281877311}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -229,8 +234,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ee18a3c12f79a469e8749d63579ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5235793014093912703 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8439017034617058204, guid: 8d0cfbb0753b67c41b9fe65f437e45a9, type: 3}
-  m_PrefabInstance: {fileID: 4446230711885359587}
-  m_PrefabAsset: {fileID: 0}
