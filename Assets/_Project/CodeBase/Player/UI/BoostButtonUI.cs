@@ -11,17 +11,14 @@ namespace Assets.Project.CodeBase.Player.UI
         
         private PlayerMover _playerMover;
 
-        private void Start()
-        {
-            if (Application.isMobilePlatform)
-            {
-                _textShift.gameObject.SetActive(false);
-                _textBoost.gameObject.SetActive(true);
-            }
-        }
-
         public void Initialize(PlayerMover playerMover) =>
             _playerMover = playerMover;
+
+        public void SetMobilePlatform()
+        {
+            _textShift.gameObject.SetActive(false);
+            _textBoost.gameObject.SetActive(true);
+        }
 
         public void OnPointerDown(PointerEventData eventData) => 
             _playerMover.OnBoostStarted();

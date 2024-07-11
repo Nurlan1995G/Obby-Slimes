@@ -2442,7 +2442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _variableJoystick: {fileID: 759898792}
   _cinemachineFreeLook: {fileID: 113185021}
-  _hideDistance: 20
+  _hideDistance: 40
 --- !u!4 &381069044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5988250409711398358, guid: 62fbf186324fdaf409ad84aaef9bfbb8, type: 3}
@@ -4262,7 +4262,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.7
+  m_fontSize: 22.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

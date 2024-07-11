@@ -18,15 +18,11 @@ public abstract class Food : MonoBehaviour
         ScoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
     }
 
-    private void Update()
-    {
+    private void Update() =>
         UpdateScoreTextColor();
-    }
 
-    public void Construct(Slime playerView)
-    {
+    public void Construct(Slime playerView) =>
         _playerView = playerView;
-    }
 
     public void Destroys()
     {
@@ -41,13 +37,9 @@ public abstract class Food : MonoBehaviour
         if (_playerView != null)
         {
             if (_playerView.ScoreLevel >= ScoreLevel)
-            {
                 ScoreLevelBarFish.ScoreText.color = Color.green;
-            }
             else
-            {
                 ScoreLevelBarFish.ScoreText.color = Color.red;
-            }
         }
     }
 }

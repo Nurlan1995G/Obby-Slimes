@@ -4,13 +4,13 @@
 public class PositionStaticData : ScriptableObject
 {
     [Header("Sharks position")]
-    [field: SerializeField] public Vector3 InitSharkOnePosition;
-    [field: SerializeField] public Vector3 InitSharkTwoPosition;
-    [field: SerializeField] public Vector3 InitSharkThreePosition;
-    [field: SerializeField] public Vector3 InitSharkFourPosition;
-    [field: SerializeField] public Vector3 InitSharkFivePosition;
-    [field: SerializeField] public Vector3 InitSharkSixPosition;
-    [field: SerializeField] public Vector3 InitSharkSevenPosition;
+    public Vector3 InitSharkOnePosition;
+    public Vector3 InitSharkTwoPosition;
+    public Vector3 InitSharkThreePosition;
+    public Vector3 InitSharkFourPosition;
+    public Vector3 InitSharkFivePosition;
+    public Vector3 InitSharkSixPosition;
+    public Vector3 InitSharkSevenPosition;
     [Header("Player position")]
-    [field: SerializeField] public Vector3 InitPlayerPosition;
+    public Vector3 InitPlayerPosition;
 }

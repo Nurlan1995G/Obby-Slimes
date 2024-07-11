@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,32 +12,58 @@ public class SpawnerFood : MonoBehaviour
     private SpawnerFoodData _spawnerFoodData;
 
     private float _nextSpawnTime;
+    private Coroutine _spawnCoroutine;
 
     public List<Food> Foods => _foods;
 
     private void Start()
     {
         _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
-        //_spawnerFoodData.MaxCountFood = _foodFactory.GetCountMaxFood();
-
         Debug.Log(_spawnerFoodData.MaxCountFood + " - MaxCountFood");
+
+        _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
     }
 
     private void Update()
     {
-        if (Time.time >= _nextSpawnTime && _foods.Count < _spawnerFoodData.MaxCountFood)
+        Debug.Log(_foods.Count + " - Foods");
+
+        if (_foods.Count >= _spawnerFoodData.MaxCountFood && _spawnCoroutine != null)
         {
-            _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
-            SpawnFoodAtRandomPoint();
+            StopCoroutine(_spawnCoroutine);
+            Debug.Log("StopCoroutine");
+            _spawnerFoodData.SpawnCooldown = 0.1f;
+           _spawnCoroutine = null;
+        }
+        else if (_foods.Count < _spawnerFoodData.MaxCountFood && _spawnCoroutine == null)
+        {
+            Debug.Log("StartCoroutine");
+            _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
         }
     }
-    
+
     public void Construct(FoodFactory fishFactory, ServesSelectTypeFood random, PlayerView playerView, ConfigFood configFish)
     {
         _foodFactory = fishFactory;
         _random = random;
         _playerView = playerView;
         _spawnerFoodData = configFish.SpawnerFoodData;
+    }
+
+    private IEnumerator SpawnFoodCoroutine()
+    {
+        while (_foods.Count < _spawnerFoodData.MaxCountFood)
+        {
+            if ( Time.time >= _nextSpawnTime)
+            {
+                Debug.Log("SapwnFoodCoroutine");
+
+                _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
+                SpawnFoodAtRandomPoint();
+            }
+
+            yield return null;
+        }
     }
 
     private void SpawnFoodAtRandomPoint()
@@ -65,5 +92,10 @@ public class SpawnerFood : MonoBehaviour
         food.FoodDied -= OnFoodDied;
         _foods.Remove(food);
         _random.RemoveFood(food);
+
+        if (_foods.Count < _spawnerFoodData.MaxCountFood && _spawnCoroutine == null)
+        {
+            _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
+        }
     }
 }
