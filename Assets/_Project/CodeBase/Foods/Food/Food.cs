@@ -3,26 +3,26 @@ using UnityEngine;
 
 public abstract class Food : MonoBehaviour
 {
-    [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFish;
     [field: SerializeField] public GameObject FoodScale;
+    [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFish;
 
     private Slime _playerView;
 
     public event Action<Food> FoodDied;
 
+    [field: SerializeField] public TypeFood TypeFood { get; private set; }
     public int ScoreLevel { get; protected set; }
 
+    public void Construct(Slime playerView) =>
+        _playerView = playerView;
+    
     private void Start()
     {
-        //WriteScoreLevel();
         ScoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
     }
 
     private void Update() =>
         UpdateScoreTextColor();
-
-    public void Construct(Slime playerView) =>
-        _playerView = playerView;
 
     public void Destroys()
     {

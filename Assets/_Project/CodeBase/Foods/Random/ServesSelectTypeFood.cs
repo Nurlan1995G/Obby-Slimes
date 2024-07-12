@@ -52,7 +52,6 @@ public class ServesSelectTypeFood
                 return typeFood = TypeFood.Gray;
             }
 
-
             if (_pinkFood < _countFoodData.MaxCountPinkFood)
             {
                 _pinkFood++;
@@ -73,33 +72,11 @@ public class ServesSelectTypeFood
         }
     }
 
-    public void RemoveFood(Food fish)
+    public void RemoveFood(Food food)
     {
-        TypeFood fishType;
+        TypeFood foodType = food.TypeFood;
 
-         if (fish is YellowFood)
-            fishType = TypeFood.Yellow;
-        else if (fish is RedFood)
-            fishType = TypeFood.Red;
-        else if (fish is BlueFood)
-            fishType = TypeFood.Blue;
-        else if (fish is GrayFood)
-            fishType = TypeFood.Pink;
-        else if (fish is OrangeFood)
-            fishType = TypeFood.Orange;
-        else if (fish is GrayFood)
-            fishType = TypeFood.Gray;
-        else if (fish is PurpleFood)
-            fishType = TypeFood.Purple;
-        else if (fish is GreenFood)
-            fishType = TypeFood.Green;
-        else
-        {
-            Debug.LogWarning("Неизвестный вид рыбы!");
-            return;
-        }
-
-        switch (fishType)
+        switch (foodType)
         {
             case TypeFood.Yellow:
                 _yellowFood--;

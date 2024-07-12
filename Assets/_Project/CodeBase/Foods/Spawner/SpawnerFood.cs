@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnerFood : MonoBehaviour
 {
-    [SerializeField] private List<Food> _foods = new List<Food>();
+    [SerializeField] private List<Food> _foods;
 
     private FoodFactory _foodFactory;
     private ServesSelectTypeFood _random;
@@ -19,6 +19,8 @@ public class SpawnerFood : MonoBehaviour
     private void Start()
     {
         _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
+
+        _spawnerFoodData.MaxCountFood = _foodFactory.GetCountMaxFood();
         Debug.Log(_spawnerFoodData.MaxCountFood + " - MaxCountFood");
 
         _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
@@ -32,7 +34,7 @@ public class SpawnerFood : MonoBehaviour
         {
             StopCoroutine(_spawnCoroutine);
             Debug.Log("StopCoroutine");
-            _spawnerFoodData.SpawnCooldown = 0.1f;
+            _spawnerFoodData.SpawnCooldown = 1f;
            _spawnCoroutine = null;
         }
         else if (_foods.Count < _spawnerFoodData.MaxCountFood && _spawnCoroutine == null)
@@ -56,7 +58,7 @@ public class SpawnerFood : MonoBehaviour
         {
             if ( Time.time >= _nextSpawnTime)
             {
-                Debug.Log("SapwnFoodCoroutine");
+                Debug.Log("SpawnFoodCoroutine");
 
                 _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
                 SpawnFoodAtRandomPoint();

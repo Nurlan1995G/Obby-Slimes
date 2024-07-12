@@ -119,8 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc6b1febcc0dbe4197b95b44a672c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreLevelBarFish: {fileID: 1239077375614564740}
   FoodScale: {fileID: 4275437718460527713}
+  ScoreLevelBarFish: {fileID: 1239077375614564740}
+  <TypeFood>k__BackingField: 4
 --- !u!1001 &3031517466750418428
 PrefabInstance:
   m_ObjectHideFlags: 0
