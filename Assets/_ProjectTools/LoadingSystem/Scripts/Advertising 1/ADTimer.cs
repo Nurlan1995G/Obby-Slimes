@@ -52,6 +52,9 @@ public class ADTimer : MonoBehaviour
                 TimerExpired();
                 StartTimer();
             }
+
+            if (!Application.isFocused)
+                _canvas.sortingOrder = -1;
         }
     }
 

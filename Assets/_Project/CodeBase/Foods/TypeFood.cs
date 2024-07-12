@@ -1,11 +1,11 @@
 ﻿public enum TypeFood
 {
     Yellow = 1,
-    Red,
+    Gray,
     Blue,
     Orange,
-    Gray,
     Pink,
     Purple,
+    Red,
     Green
 }

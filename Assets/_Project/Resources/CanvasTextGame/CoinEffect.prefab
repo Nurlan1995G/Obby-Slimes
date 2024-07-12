@@ -317,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6248442064609513256}
   - component: {fileID: 1408688184185988788}
-  - component: {fileID: 3257300737646550003}
+  - component: {fileID: 226574361770909975}
   m_Layer: 0
   m_Name: CoinEffect
   m_TagString: Untagged
@@ -358,7 +358,7 @@ MonoBehaviour:
   _value: 0.1
   CanvasGroup: {fileID: 7826569586119034829}
   IsFadingOut: 0
---- !u!114 &3257300737646550003
+--- !u!114 &226574361770909975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6642409002621767631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e25479c92c8344da0da9c0b51169d1, type: 3}
+  m_Script: {fileID: 11500000, guid: f5a44f1f738b3e443aed68e5a00372f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotate: 100

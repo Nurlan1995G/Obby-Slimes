@@ -13,8 +13,10 @@ namespace Assets.Project.AssetProviders
         public const string SlimeEnemy5 = "SlimeEnemies/SlimeEnemyBot5";
         public const string SlimeEnemy6 = "SlimeEnemies/SlimeEnemyBot6";
         public const string SlimeEnemy7 = "SlimeEnemies/SlimeEnemyBot7";
+        public const string SlimeEnemy8 = "SlimeEnemies/SlimeEnemyBot8";
+        public const string SlimeEnemy9 = "SlimeEnemies/SlimeEnemyBot9";
 
-        public static readonly List<string> SlimeBotsTag = new List<string> { "Shark1", "Shark2", "Shark3", "Shark4","Shark5", "Shark6", "Shark7" };
+        public static readonly List<string> SlimeBotsTag = new List<string> { "Shark1", "Shark2", "Shark3", "Shark4","Shark5", "Shark6", "Shark7", "Shark8", "Shark9" };
         public const string PlayerTag = "Player";
 
         public const string NickPlayer = "Игрок";
@@ -25,5 +27,7 @@ namespace Assets.Project.AssetProviders
         public const string NickBot5 = "Тихоня";
         public const string NickBot6 = "Николя";
         public const string NickBot7 = "Наполеон";
+        public const string NickBot8 = "Кадрила";
+        public const string NickBot9 = "КтоЯ";
     }
 }

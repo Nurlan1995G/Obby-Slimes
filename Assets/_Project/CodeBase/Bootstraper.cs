@@ -31,6 +31,7 @@ public class Bootstraper : MonoBehaviour
         InitPlayer(topSharksManager);
         InitCamera();
         InitUI(topSharksManager);
+        InitBoostUI();
     }
 
     private void InitSpawner(AssetProvider assetProvider, ServesSelectTypeFood random) =>
@@ -52,5 +53,11 @@ public class Bootstraper : MonoBehaviour
     {
         foreach (SpawnPointEnemyBot spawnPoint in _spawnPoints)
             spawnPoint.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _gameConfig, topSharksManager);
+    }
+
+    private void InitBoostUI()
+    {
+        if (Application.isMobilePlatform)
+            _boostButtonUI.SetMobilePlatform();
     }
 }

@@ -1,130 +1,73 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System;
 
 public class ServesSelectTypeFood
 {
     private FoodStaticData _countFoodData;
 
-    private int _yellowFood = 0;
-    private int _redFood = 0;
-    private int _blueFood = 0;
-    private int _orangeFood = 0;
-    private int _grayFood = 0;
-    private int _pinkFood = 0;
-    private int _purpleFood = 0;
-    private int _greenFood = 0;
+    private Dictionary<TypeFood, int> _foodCounts;
+    private Dictionary<TypeFood, int> _maxFoodCounts;
 
-    public ServesSelectTypeFood(ConfigFood configFish) =>
+    private List<TypeFood> _availableTypes;
+
+    public ServesSelectTypeFood(ConfigFood configFish)
+    {
         _countFoodData = configFish.FoodStaticData;
+
+        _foodCounts = new Dictionary<TypeFood, int>
+        {
+            { TypeFood.Yellow, 0 },
+            { TypeFood.Red, 0 },
+            { TypeFood.Blue, 0 },
+            { TypeFood.Orange, 0 },
+            { TypeFood.Gray, 0 },
+            { TypeFood.Pink, 0 },
+            { TypeFood.Purple, 0 },
+            { TypeFood.Green, 0 }
+        };
+
+        _maxFoodCounts = new Dictionary<TypeFood, int>
+        {
+            { TypeFood.Yellow, _countFoodData.MaxCountYellowFood },
+            { TypeFood.Red, _countFoodData.MaxCountRedFood },
+            { TypeFood.Blue, _countFoodData.MaxCountBlueFood },
+            { TypeFood.Orange, _countFoodData.MaxCountOrangeFood },
+            { TypeFood.Gray, _countFoodData.MaxCountGrayFood },
+            { TypeFood.Pink, _countFoodData.MaxCountPinkFood },
+            { TypeFood.Purple, _countFoodData.MaxCountPurpleFood },
+            { TypeFood.Green, _countFoodData.MaxCountGreenFood }
+        };
+
+        _availableTypes = new List<TypeFood>(_foodCounts.Keys);
+    }
 
     public TypeFood SpawnFoods()
     {
-        TypeFood typeFood;
-
-        while (true)
+        if (_availableTypes.Count == 0)
         {
-            if (_purpleFood < _countFoodData.MaxCountPurpleFood)
-            {
-                _purpleFood++;
-                return typeFood = TypeFood.Purple;
-            }
-
-            if (_greenFood < _countFoodData.MaxCountGreenFood)
-            {
-                _greenFood++;
-                return typeFood = TypeFood.Green;
-            }
-
-            if (_yellowFood < _countFoodData.MaxCountYellowFood)
-            {
-                _yellowFood++;
-                return typeFood = TypeFood.Yellow;
-            }
-
-            if (_blueFood < _countFoodData.MaxCountBlueFood)
-            {
-                _blueFood++;
-                return typeFood = TypeFood.Blue;
-            }
-
-            if (_grayFood < _countFoodData.MaxCountGrayFood)
-            {
-                _grayFood++;
-                return typeFood = TypeFood.Gray;
-            }
-
-
-            if (_pinkFood < _countFoodData.MaxCountPinkFood)
-            {
-                _pinkFood++;
-                return typeFood = TypeFood.Pink;
-            }
-
-            if (_redFood < _countFoodData.MaxCountRedFood)
-            {
-                _redFood++;
-                return typeFood = TypeFood.Red;
-            }
-
-            if (_orangeFood < _countFoodData.MaxCountOrangeFood)
-            {
-                _orangeFood++;
-                return typeFood = TypeFood.Orange;
-            }
+            throw new InvalidOperationException("No available food types to spawn.");
         }
+
+        TypeFood selectedType = _availableTypes[UnityEngine.Random.Range(0, _availableTypes.Count)];
+        _foodCounts[selectedType]++;
+
+        if (_foodCounts[selectedType] >= _maxFoodCounts[selectedType])
+        {
+            _availableTypes.Remove(selectedType);
+        }
+
+        return selectedType;
     }
 
-    public void RemoveFood(Food fish)
+    public void RemoveFood(Food food)
     {
-        TypeFood fishType;
+        TypeFood foodType = food.TypeFood;
 
-         if (fish is YellowFood)
-            fishType = TypeFood.Yellow;
-        else if (fish is RedFood)
-            fishType = TypeFood.Red;
-        else if (fish is BlueFood)
-            fishType = TypeFood.Blue;
-        else if (fish is GrayFood)
-            fishType = TypeFood.Pink;
-        else if (fish is OrangeFood)
-            fishType = TypeFood.Orange;
-        else if (fish is GrayFood)
-            fishType = TypeFood.Gray;
-        else if (fish is PurpleFood)
-            fishType = TypeFood.Purple;
-        else if (fish is GreenFood)
-            fishType = TypeFood.Green;
-        else
-        {
-            Debug.LogWarning("Неизвестный вид рыбы!");
-            return;
-        }
+        _foodCounts[foodType]--;
 
-        switch (fishType)
+        if (_foodCounts[foodType] < _maxFoodCounts[foodType] && !_availableTypes.Contains(foodType))
         {
-            case TypeFood.Yellow:
-                _yellowFood--;
-                break;
-            case TypeFood.Red:
-                _redFood--;
-                break;
-            case TypeFood.Blue:
-                _blueFood--;
-                break;
-            case TypeFood.Orange:
-                _orangeFood--;
-                break;
-            case TypeFood.Gray:
-                _grayFood--;
-                break;
-            case TypeFood.Pink:
-                _pinkFood--;
-                break;
-            case TypeFood.Purple:
-                _purpleFood--;
-                break;
-            case TypeFood.Green:
-                _greenFood--;
-                break;
+            _availableTypes.Add(foodType);
         }
     }
 }
