@@ -16,6 +16,14 @@ public class SpawnerFood : MonoBehaviour
 
     public List<Food> Foods => _foods;
 
+    public void Construct(FoodFactory fishFactory, ServesSelectTypeFood random, PlayerView playerView, ConfigFood configFish)
+    {
+        _foodFactory = fishFactory;
+        _random = random;
+        _playerView = playerView;
+        _spawnerFoodData = configFish.SpawnerFoodData;
+    }
+
     private void Start()
     {
         _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
@@ -34,8 +42,8 @@ public class SpawnerFood : MonoBehaviour
         {
             StopCoroutine(_spawnCoroutine);
             Debug.Log("StopCoroutine");
-            _spawnerFoodData.SpawnCooldown = 1f;
-           _spawnCoroutine = null;
+            _spawnerFoodData.SpawnCooldown = 0.1f;
+            _spawnCoroutine = null;
         }
         else if (_foods.Count < _spawnerFoodData.MaxCountFood && _spawnCoroutine == null)
         {
@@ -44,19 +52,11 @@ public class SpawnerFood : MonoBehaviour
         }
     }
 
-    public void Construct(FoodFactory fishFactory, ServesSelectTypeFood random, PlayerView playerView, ConfigFood configFish)
-    {
-        _foodFactory = fishFactory;
-        _random = random;
-        _playerView = playerView;
-        _spawnerFoodData = configFish.SpawnerFoodData;
-    }
-
     private IEnumerator SpawnFoodCoroutine()
     {
         while (_foods.Count < _spawnerFoodData.MaxCountFood)
         {
-            if ( Time.time >= _nextSpawnTime)
+            if (Time.time >= _nextSpawnTime)
             {
                 Debug.Log("SpawnFoodCoroutine");
 

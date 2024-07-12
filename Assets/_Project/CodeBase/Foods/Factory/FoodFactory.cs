@@ -26,11 +26,11 @@ public class FoodFactory
                 food.WriteScoreLevel(_foodStaticData.ScoreLevelYellow);
                 return food;
 
-            case TypeFood.Red:
-                food = _assetProvider.Instantiate(_foodStaticData.RedFoodPrefab, whereToSpawn
+            case TypeFood.Gray:
+                food = _assetProvider.Instantiate(_foodStaticData.GrayFoodPrefab, whereToSpawn
                         , Quaternion.identity);
-                food.FoodScale.transform.localScale = _foodStaticData.ScalePrefabRed;
-                food.WriteScoreLevel(_foodStaticData.ScoreLevelRed);
+                food.FoodScale.transform.localScale = _foodStaticData.ScalePrefabGray;
+                food.WriteScoreLevel(_foodStaticData.ScoreLevelGray);
                 return food;
 
             case TypeFood.Blue:
@@ -45,16 +45,16 @@ public class FoodFactory
                 food.WriteScoreLevel(_foodStaticData.ScoreLevelOrange);
                 return food;
 
-            case TypeFood.Gray:
-                food = _assetProvider.Instantiate(_foodStaticData.GrayFoodPrefab, whereToSpawn, Quaternion.identity);
-                food.FoodScale.transform.localScale = _foodStaticData.ScalePrefabGray;
-                food.WriteScoreLevel(_foodStaticData.ScoreLevelGray);
-                return food;
-
             case TypeFood.Pink:
                 food = _assetProvider.Instantiate(_foodStaticData.PinkFoodPrefab, whereToSpawn, Quaternion.identity);
                 food.FoodScale.transform.localScale = _foodStaticData.ScalePrefabPink;
                 food.WriteScoreLevel(_foodStaticData.ScoreLevelPink);
+                return food;
+
+            case TypeFood.Red:
+                food = _assetProvider.Instantiate(_foodStaticData.RedFoodPrefab, whereToSpawn, Quaternion.identity);
+                food.FoodScale.transform.localScale = _foodStaticData.ScalePrefabRed;
+                food.WriteScoreLevel(_foodStaticData.ScoreLevelRed);
                 return food;
 
             case TypeFood.Purple:

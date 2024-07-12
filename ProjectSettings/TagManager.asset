@@ -3,7 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Shark1
+  - Shark2
+  - Shark3
+  - Shark4
+  - Shark5
+  - Shark6
+  - Shark7
+  - SharkPoint3
+  - SharkPoint4
+  - SpawnPointPlayer
+  - SharkPoint2
+  - SharkPoint1
+  - SharkPoint5
+  - SharkPoint6
+  - SharkPoint7
+  - Shark8
+  - Shark9
+  - SharkPoint8
+  - SharkPoint9
   layers:
   - Default
   - TransparentFX

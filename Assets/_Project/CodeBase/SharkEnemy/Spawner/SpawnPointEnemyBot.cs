@@ -86,6 +86,18 @@ public class SpawnPointEnemyBot : MonoBehaviour
             sharkEnemy = AssetAdress.SlimeEnemy7;
             nickName = AssetAdress.NickBot7;
         }
+        else if (sharkTag == "Shark8")
+        {
+            position = _sharkPositionStaticData.InitSharkEightPosition;
+            sharkEnemy = AssetAdress.SlimeEnemy8;
+            nickName = AssetAdress.NickBot8;
+        }
+        else if (sharkTag == "Shark9")
+        {
+            position = _sharkPositionStaticData.InitSharkNinePosition;
+            sharkEnemy = AssetAdress.SlimeEnemy9;
+            nickName = AssetAdress.NickBot9;
+        }
         else
             return;
 

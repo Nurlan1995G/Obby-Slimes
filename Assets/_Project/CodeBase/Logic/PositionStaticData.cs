@@ -11,6 +11,8 @@ public class PositionStaticData : ScriptableObject
     public Vector3 InitSharkFivePosition;
     public Vector3 InitSharkSixPosition;
     public Vector3 InitSharkSevenPosition;
+    public Vector3 InitSharkEightPosition;
+    public Vector3 InitSharkNinePosition;
     [Header("Player position")]
     public Vector3 InitPlayerPosition;
 }
