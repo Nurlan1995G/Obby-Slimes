@@ -11,9 +11,9 @@ namespace Assets.Project.CodeBase.Player.UI
         [SerializeField] private Button revengeButton;
         [SerializeField] private ADTimer _adTimer;
 
-        private RespawnShark _respawnPlayer;
+        private RespawnSlime _respawnPlayer;
 
-        public void Initialize(RespawnShark respawnPlayer) =>
+        public void Initialize(RespawnSlime respawnPlayer) =>
             _respawnPlayer = respawnPlayer;
 
         private void OnEnable()

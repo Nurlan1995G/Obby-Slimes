@@ -3,7 +3,7 @@ using Assets.Project.CodeBase.SharkEnemy;
 
 namespace Assets.Project.CodeBase.Player.Respawn
 {
-    public class RespawnShark
+    public class RespawnSlime
     {
         private UIPopup _uiPopup;
         private PositionStaticData _positionPlayer;

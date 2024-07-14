@@ -21,7 +21,7 @@ public class TriggerSlimeEnemy : MonoBehaviour
             if(_sharkModel.ScoreLevel > playerView.ScoreLevel && playerView.ScoreLevel > 1)
             {
                 _sharkModel.AddScore(playerView.ScoreLevel);
-                playerView.Destroys(_sharkModel);
+                playerView.Destroy(_sharkModel);
             }
          }
 

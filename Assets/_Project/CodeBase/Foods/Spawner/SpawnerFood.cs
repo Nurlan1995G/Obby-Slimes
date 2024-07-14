@@ -22,34 +22,29 @@ public class SpawnerFood : MonoBehaviour
         _random = random;
         _playerView = playerView;
         _spawnerFoodData = configFish.SpawnerFoodData;
-    }
 
-    private void Start()
-    {
-        _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
-
-        _spawnerFoodData.MaxCountFood = _foodFactory.GetCountMaxFood();
-        Debug.Log(_spawnerFoodData.MaxCountFood + " - MaxCountFood");
-
-        _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
+        StartSpawn();
     }
 
     private void Update()
     {
-        Debug.Log(_foods.Count + " - Foods");
-
         if (_foods.Count >= _spawnerFoodData.MaxCountFood && _spawnCoroutine != null)
         {
             StopCoroutine(_spawnCoroutine);
-            Debug.Log("StopCoroutine");
             _spawnerFoodData.SpawnCooldown = 0.1f;
             _spawnCoroutine = null;
         }
-        else if (_foods.Count < _spawnerFoodData.MaxCountFood && _spawnCoroutine == null)
-        {
-            Debug.Log("StartCoroutine");
-            _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
-        }
+    }
+
+    private void StartSpawn()
+    {
+        _spawnerFoodData.SpawnCooldown = 0.01f;
+
+        _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
+
+        _spawnerFoodData.MaxCountFood = _foodFactory.GetCountMaxFood();
+
+        _spawnCoroutine = StartCoroutine(SpawnFoodCoroutine());
     }
 
     private IEnumerator SpawnFoodCoroutine()
@@ -58,8 +53,6 @@ public class SpawnerFood : MonoBehaviour
         {
             if (Time.time >= _nextSpawnTime)
             {
-                Debug.Log("SpawnFoodCoroutine");
-
                 _nextSpawnTime = Time.time + _spawnerFoodData.SpawnCooldown;
                 SpawnFoodAtRandomPoint();
             }

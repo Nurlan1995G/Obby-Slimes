@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9104448478136681557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MarblePreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +26,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 689318191552107061}
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3624399313523910921}
   - component: {fileID: 595640550932886763}
   - component: {fileID: 985803625198173425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Marble
   m_TagString: Untagged
   m_Icon: {fileID: 0}

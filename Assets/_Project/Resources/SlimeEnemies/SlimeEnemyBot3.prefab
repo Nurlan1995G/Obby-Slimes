@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4915159188185125157}
   - component: {fileID: 4044855220105507837}
-  - component: {fileID: 1711155960974497836}
   - component: {fileID: 6959687033656843151}
   - component: {fileID: 4839483315828719646}
   - component: {fileID: 3354676460625169482}
   - component: {fileID: 1886692049686426951}
+  - component: {fileID: 1945679627828268348}
   m_Layer: 0
   m_Name: SlimeEnemyBot3
   m_TagString: Shark3
@@ -61,27 +61,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &1711155960974497836
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381095735657426786}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.83, y: 0.5, z: 0.82}
-  m_Center: {x: 0, y: 0, z: -0.16}
 --- !u!54 &6959687033656843151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,11 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreLevelBar: {fileID: 8340976206152822784}
+  SharkSkin: {fileID: 1256044150120123588}
   NickName: {fileID: 1525067727067095840}
+  CapsuleCollider: {fileID: 1945679627828268348}
   _localScaleX: 0.2
   _crown: {fileID: 6940617285199949413}
-  SharkSkin: {fileID: 1256044150120123588}
-  BoxCollider: {fileID: 1711155960974497836}
   _triggerSharkEnemy: {fileID: 4839483315828719646}
 --- !u!114 &1886692049686426951
 MonoBehaviour:
@@ -155,6 +134,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 4044855220105507837}
   _sharkModel: {fileID: 3354676460625169482}
+--- !u!136 &1945679627828268348
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381095735657426786}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1256044150120123588
 GameObject:
   m_ObjectHideFlags: 0

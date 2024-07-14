@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   SpawnerFoodData:
-    SpawnCooldown: 0.05
+    SpawnCooldown: 0.01
     MaxCountFood: 1480
   FoodStaticData:
     PurpleFoodPrefab: {fileID: -15549828494404633, guid: a249ed98c7a25d84593ac4d7e4694ed1, type: 3}

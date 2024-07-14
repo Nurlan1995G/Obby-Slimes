@@ -14,8 +14,14 @@ public class PlayerMover : MonoBehaviour
     private bool _isBoosting;
     private float _boostTimeRemaining;
 
-    private void Awake() =>
-        _input = new PlayerInput();
+    public void Construct(PlayerData playerData, BoostButtonUI boostButtonUI, PlayerInput playerInput)
+    {
+        _playerData = playerData;
+        _boostButtonUI = boostButtonUI;
+        _input = playerInput;
+
+        _boostButtonUI.Initialize(this);
+    }
 
     private void Start()
     {
@@ -41,20 +47,11 @@ public class PlayerMover : MonoBehaviour
         CheckDelayBoost();
     }
 
-
     private void OnDisable()
     {
         _input.Disable();
         _input.Player.Boost.started -= OnBoostInputStarted;
         _input.Player.Boost.canceled -= OnBoostInputCanceled;
-    }
-
-    public void Construct(PlayerData playerData, BoostButtonUI boostButtonUI)
-    {
-        _playerData = playerData;
-        _boostButtonUI = boostButtonUI;
-
-        _boostButtonUI.Initialize(this);
     }
 
     public void AgentEnable() =>

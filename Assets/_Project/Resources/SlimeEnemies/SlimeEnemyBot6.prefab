@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8077453349290657561}
   - component: {fileID: 1114719131618329786}
-  - component: {fileID: 6905874630324020751}
   - component: {fileID: 7409623389538781635}
   - component: {fileID: 8006305831456667470}
   - component: {fileID: 4838545399983231569}
   - component: {fileID: 6660768195704125222}
+  - component: {fileID: 6776471179869043573}
   m_Layer: 0
   m_Name: SlimeEnemyBot6
   m_TagString: Shark6
@@ -61,27 +61,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &6905874630324020751
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4443521393305195533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.83, y: 0.5, z: 0.82}
-  m_Center: {x: 0, y: 0, z: -0.16}
 --- !u!54 &7409623389538781635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,11 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreLevelBar: {fileID: 4143036103362424391}
+  SharkSkin: {fileID: 5790398817976052235}
   NickName: {fileID: 6887197680381951335}
+  CapsuleCollider: {fileID: -5651559464567665131, guid: 214ed5362b9bb7d4587cc24422555f54, type: 3}
   _localScaleX: 0.2
   _crown: {fileID: 3092876102662041634}
-  SharkSkin: {fileID: 5790398817976052235}
-  BoxCollider: {fileID: 6905874630324020751}
   _triggerSharkEnemy: {fileID: 8006305831456667470}
 --- !u!114 &6660768195704125222
 MonoBehaviour:
@@ -155,6 +134,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 1114719131618329786}
   _sharkModel: {fileID: 4838545399983231569}
+--- !u!136 &6776471179869043573
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443521393305195533}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5790398817976052235
 GameObject:
   m_ObjectHideFlags: 0
