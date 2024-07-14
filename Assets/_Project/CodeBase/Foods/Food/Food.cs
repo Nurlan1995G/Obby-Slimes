@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Food : MonoBehaviour
 {
     [field: SerializeField] public GameObject FoodScale;
-    [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFish;
+    [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFood;
 
     private Slime _playerView;
 
@@ -18,7 +18,7 @@ public abstract class Food : MonoBehaviour
     
     private void Start()
     {
-        ScoreLevelBarFish.ScoreText.text = ScoreLevel.ToString();
+        ScoreLevelBarFood.ScoreText.text = ScoreLevel.ToString();
     }
 
     private void Update() =>
@@ -37,9 +37,9 @@ public abstract class Food : MonoBehaviour
         if (_playerView != null)
         {
             if (_playerView.ScoreLevel >= ScoreLevel)
-                ScoreLevelBarFish.ScoreText.color = Color.green;
+                ScoreLevelBarFood.ScoreText.color = Color.green;
             else
-                ScoreLevelBarFish.ScoreText.color = Color.red;
+                ScoreLevelBarFood.ScoreText.color = Color.red;
         }
     }
 }

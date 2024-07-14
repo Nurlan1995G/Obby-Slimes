@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodScale: {fileID: 3465367651141787839}
-  ScoreLevelBarFish: {fileID: 6579451216276797255}
+  ScoreLevelBarFood: {fileID: 6579451216276797255}
   <TypeFood>k__BackingField: 7
 --- !u!1001 &6948741244281877311
 PrefabInstance:

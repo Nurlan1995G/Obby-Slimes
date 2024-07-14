@@ -12,24 +12,25 @@ public class PlayerView : Slime
     [SerializeField] private EffectCoin _effectCoin;
 
     private UIPopup _uiPopup;
-    private RespawnShark _respawn;
+    private RespawnSlime _respawn;
     private PositionStaticData _positionStaticData;
     private SoundHandler _soundhandler;
 
     public Action<PlayerView> PlayerDied;
 
     public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
-        , BoostButtonUI boostButtonUI, SoundHandler soundHandler)
+        , BoostButtonUI boostButtonUI, SoundHandler soundHandler, RespawnSlime respawnSlime, PlayerInput playerInput)
     {
-        _respawn = new RespawnShark();
+        _respawn = respawnSlime;
 
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
-        _uiPopup = uiPopup;
-        _soundhandler = soundHandler;
-        _mover.Construct(gameConfig.PlayerData, boostButtonUI);
+        _uiPopup = uiPopup ?? throw new ArgumentNullException(nameof(uiPopup));
+        _soundhandler = soundHandler ?? throw new ArgumentNullException(nameof(soundHandler));
+
+        _mover.Construct(gameConfig.PlayerData, boostButtonUI, playerInput);
     }
 
-    public void Destroys(SlimeModel killerShark = null)
+    public void Destroy(SlimeModel killerShark = null)
     {
         PlayerDied?.Invoke(this);
         _soundhandler.PlayLose();

@@ -73,7 +73,7 @@ public class ADTimer : MonoBehaviour
         if (_timerText != null)
         {
             int minutes = Mathf.FloorToInt(_currentTime / 60f);
-            int seconds = Mathf.FloorToInt(_currentTime % 60f);
+            int seconds = Mathf.FloorToInt(_currentTime + 1 % 60f);
 
             _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }

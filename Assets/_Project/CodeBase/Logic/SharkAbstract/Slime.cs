@@ -5,11 +5,11 @@ using UnityEngine;
 public abstract class Slime : MonoBehaviour
 {
     [field: SerializeField] protected ScoreLevelBar ScoreLevelBar;
+    [SerializeField] protected GameObject SharkSkin;
     [SerializeField] protected NickName NickName;
+    [SerializeField] protected CapsuleCollider CapsuleCollider;
     [SerializeField] private float _localScaleX = 0.2f;
     [SerializeField] private GameObject _crown;
-    [SerializeField] protected GameObject SharkSkin;
-    [SerializeField] protected BoxCollider BoxCollider;
 
     private TopSharksManager _topSharkManager;
 
@@ -17,9 +17,7 @@ public abstract class Slime : MonoBehaviour
     protected int ParametrRaising = 10;
     protected int ScoreCount;
 
-    private float _centerZ = -0.35f;
-    private float _sizeX = 0.8f;
-    private float _sizeZ = 1.5f;
+    private float _radius = 1.3f;
 
     public int ScoreLevel => Score;
     public event Action OnScoreChanged;
@@ -43,12 +41,9 @@ public abstract class Slime : MonoBehaviour
 
     public void SetInitialSizeBox()
     {
-        _centerZ = -0.35f;
-        _sizeX = 0.8f;
-        _sizeZ = 1.5f;
+        _radius = 1.3f;
 
-        BoxCollider.center = new Vector3(0, 0, _centerZ);
-        BoxCollider.size = new Vector3(_sizeX, 0.3f, _sizeZ);
+        CapsuleCollider.radius = _radius;
     }
 
     public abstract string GetSharkName();
@@ -69,12 +64,9 @@ public abstract class Slime : MonoBehaviour
 
     public void SetBoxCollider() 
     {
-        _centerZ -= 0.3f;
-        _sizeX += 0.5f;
-        _sizeZ += 1f;
+        _radius += 0.5f; 
 
-        BoxCollider.center = new Vector3(0, 0, _centerZ);
-        BoxCollider.size = new Vector3(_sizeX, 0.5f, _sizeZ);
+        CapsuleCollider.radius =_radius;
     }
     
     private void IncreaseSize()

@@ -1,5 +1,6 @@
 ﻿using Assets.CodeBase.CameraLogic;
 using Assets.Project.AssetProviders;
+using Assets.Project.CodeBase.Player.Respawn;
 using Assets.Project.CodeBase.Player.UI;
 using Assets.Project.CodeBase.SharkEnemy.Factory;
 using System.Collections.Generic;
@@ -25,10 +26,12 @@ public class Bootstraper : MonoBehaviour
         ServesSelectTypeFood random = new ServesSelectTypeFood(_configFood);
         TopSharksManager topSharksManager = new TopSharksManager();
         FactoryShark factoryShark = new FactoryShark(assetProvider);
+        RespawnSlime respawnSlime = new RespawnSlime();
+        PlayerInput playerInput = new PlayerInput();
 
         InitSpawner(assetProvider, random);
         WriteSpawnPoint(factoryShark, topSharksManager);
-        InitPlayer(topSharksManager);
+        InitPlayer(topSharksManager, respawnSlime, playerInput);
         InitCamera();
         InitUI(topSharksManager);
         InitBoostUI();
@@ -40,9 +43,10 @@ public class Bootstraper : MonoBehaviour
     private void InitCamera() =>
         _cameraRotater.Construct(_gameConfig);
 
-    private void InitPlayer(TopSharksManager topSharksManager)
+    private void InitPlayer(TopSharksManager topSharksManager, RespawnSlime respawnSlime,
+        PlayerInput playerInput)
     {
-        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler);
+        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler, respawnSlime, playerInput);
         _playerView.Init(topSharksManager);
     }
 
