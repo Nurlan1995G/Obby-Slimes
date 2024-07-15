@@ -63,10 +63,18 @@ public class SpawnerFood : MonoBehaviour
 
     private void SpawnFoodAtRandomPoint()
     {
+        Vector3 spawnPosition;
+
+        float positionUnikX = Random.Range(150, 80);
+        float positionUnikZ = Random.Range(125, 25);
+
         float positionX = Random.Range(-33, 260);
         float positionZ = Random.Range(-80, 215);
 
-        Vector3 spawnPosition = new Vector3(positionX, 0, positionZ);
+        if(_foods.Count <= _spawnerFoodData.CountFoodUnikZone)
+            spawnPosition = new Vector3(positionUnikX, 0, positionUnikZ);
+        else
+            spawnPosition = new Vector3(positionX, 0, positionZ);
 
         Food food = _foodFactory.GetFish(_random.SpawnFoods(), spawnPosition);
         food.transform.SetParent(this.transform);

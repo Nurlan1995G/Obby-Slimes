@@ -15,36 +15,37 @@ MonoBehaviour:
   SpawnerFoodData:
     SpawnCooldown: 0.01
     MaxCountFood: 1480
+    CountFoodUnikZone: 300
   FoodStaticData:
-    PurpleFoodPrefab: {fileID: -15549828494404633, guid: a249ed98c7a25d84593ac4d7e4694ed1, type: 3}
+    PurpleFoodPrefab: {fileID: 5342304770547023060, guid: c608eeb4dbc08944582b17cd61ddc4ac, type: 3}
     ScalePrefabPurple: {x: 0.2, y: 0.2, z: 0.2}
     MaxCountPurpleFood: 350
     ScoreLevelPurple: 1
-    GreenFoodPrefab: {fileID: 7629861478336026512, guid: 0d6e88147e369fd4b8f9663a23c03729, type: 3}
+    GreenFoodPrefab: {fileID: 3295905654225933523, guid: f56a1aca26ced944fbb9d632039ae68b, type: 3}
     ScalePrefabGreen: {x: 0.2, y: 0.2, z: 0.2}
     MaxCountGreenFood: 300
     ScoreLevelGreen: 2
-    BlueFoodPrefab: {fileID: -6472290421158234521, guid: 46c8976f3ed128d4eabb4967749b1349, type: 3}
+    BlueFoodPrefab: {fileID: 636595536965434471, guid: cbf99cb83bad0a849b5926a049f4af1b, type: 3}
     ScalePrefabBlue: {x: 0.2, y: 0.2, z: 0.2}
     MaxCountBlueFood: 180
     ScoreLevelBlue: 3
-    RedFoodPrefab: {fileID: -164283950779379860, guid: 99a2988eb2f508e489d9de80c563c7e6, type: 3}
+    RedFoodPrefab: {fileID: 659123254327164286, guid: 285b132354905f34283f915e696f87c6, type: 3}
     ScalePrefabRed: {x: 0.25, y: 0.25, z: 0.25}
     MaxCountRedFood: 160
     ScoreLevelRed: 4
-    YellowFoodPrefab: {fileID: -6732591561947989458, guid: 889380f8d5844244b810c121b984e82e, type: 3}
+    YellowFoodPrefab: {fileID: 7791970636523095740, guid: 79dbb80cb64fcd440a87d72a33941f96, type: 3}
     ScalePrefabYellow: {x: 0.3, y: 0.3, z: 0.3}
     MaxCountYellowFood: 150
     ScoreLevelYellow: 5
-    PinkFoodPrefab: {fileID: 2813840350830433783, guid: 377a834d46bca6544867ada19c9bfa48, type: 3}
+    PinkFoodPrefab: {fileID: 963279508443894816, guid: 6ad923756e9b44048bbe5d070ef97401, type: 3}
     ScalePrefabPink: {x: 0.35, y: 0.35, z: 0.35}
     MaxCountPinkFood: 130
     ScoreLevelPink: 6
-    GrayFoodPrefab: {fileID: -1969921956231976452, guid: 6a16d4b87cd5fcc4b8d3557340626610, type: 3}
+    GrayFoodPrefab: {fileID: 7693136601486335749, guid: 8300835e2b44fe64fadfe2a1d4d14b77, type: 3}
     ScalePrefabGray: {x: 0.4, y: 0.4, z: 0.4}
     MaxCountGrayFood: 110
     ScoreLevelGray: 7
-    OrangeFoodPrefab: {fileID: 2204907712010592915, guid: 275728f09022a6a49b1dbd2624815560, type: 3}
+    OrangeFoodPrefab: {fileID: 4580937556239515993, guid: 81c312b5b38e34c4fbe425262df1535b, type: 3}
     ScalePrefabOrange: {x: 0.45, y: 0.45, z: 0.45}
     MaxCountOrangeFood: 100
     ScoreLevelOrange: 8

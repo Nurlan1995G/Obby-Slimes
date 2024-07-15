@@ -1,4 +1,5 @@
-﻿using Assets.CodeBase.CameraLogic;
+﻿using Assets._Project.CodeBase.Logic.Move;
+using Assets.CodeBase.CameraLogic;
 using Assets.Project.AssetProviders;
 using Assets.Project.CodeBase.Player.Respawn;
 using Assets.Project.CodeBase.Player.UI;
@@ -12,6 +13,7 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private PositionStaticData _positionStaticData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private PlayerView _playerView;
+    [SerializeField] private PlayerMover _playerMover;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
     [SerializeField] private CameraRotator _cameraRotater;
     [SerializeField] private ConfigFood _configFood;
@@ -19,6 +21,7 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private BoostButtonUI _boostButtonUI;
     [SerializeField] private TopSharksUI _topSharksUI;
     [SerializeField] private SoundHandler _soundHandler;
+    [SerializeField] private MoveJostick _moveJostick;
 
     private void Awake()
     {
@@ -33,8 +36,8 @@ public class Bootstraper : MonoBehaviour
         WriteSpawnPoint(factoryShark, topSharksManager);
         InitPlayer(topSharksManager, respawnSlime, playerInput);
         InitCamera();
-        InitUI(topSharksManager);
-        InitBoostUI();
+        InitTopUI(topSharksManager);
+        InitMobileUI();
     }
 
     private void InitSpawner(AssetProvider assetProvider, ServesSelectTypeFood random) =>
@@ -48,9 +51,10 @@ public class Bootstraper : MonoBehaviour
     {
         _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler, respawnSlime, playerInput);
         _playerView.Init(topSharksManager);
+        _playerMover.Construct(_gameConfig.PlayerData, _boostButtonUI, playerInput);
     }
 
-    private void InitUI(TopSharksManager topSharksManager) =>
+    private void InitTopUI(TopSharksManager topSharksManager) =>
         _topSharksUI.Construct(topSharksManager);
 
     private void WriteSpawnPoint(FactoryShark factoryShark, TopSharksManager topSharksManager)
@@ -59,9 +63,13 @@ public class Bootstraper : MonoBehaviour
             spawnPoint.Construct(factoryShark, _positionStaticData, _playerView, _spawner, _gameConfig, topSharksManager);
     }
 
-    private void InitBoostUI()
+    private void InitMobileUI()
     {
         if (Application.isMobilePlatform)
+        {
             _boostButtonUI.SetMobilePlatform();
+            _moveJostick.gameObject.SetActive(true);
+            _boostButtonUI.gameObject.SetActive(true);
+        }
     }
 }

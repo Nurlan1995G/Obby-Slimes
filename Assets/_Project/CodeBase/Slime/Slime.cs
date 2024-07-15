@@ -1,4 +1,5 @@
-﻿using Assets.Project.CodeBase.SharkEnemy;
+﻿using Assets._Project.CodeBase.Slime.Interface;
+using Assets.Project.CodeBase.SharkEnemy;
 using System;
 using UnityEngine;
 
@@ -61,7 +62,7 @@ public abstract class Slime : MonoBehaviour
 
     public virtual void SetPlayerViewWallet() { }
     public virtual void SetPlayerViewHeightCoins() { }
-
+    
     public void SetBoxCollider() 
     {
         _radius += 0.5f; 

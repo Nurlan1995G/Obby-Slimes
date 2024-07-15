@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 6674073697067797537}
   CanvasRectTransform: {fileID: 3952602129927627200}
-  _height: 0.2
+  _height: 0.4
   _positionY: 3
 --- !u!114 &2942233286844851790
 MonoBehaviour:

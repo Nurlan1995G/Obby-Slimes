@@ -13,6 +13,7 @@ public class SpawnerFoodData
 {
     public float SpawnCooldown = 0.1f;
     public int MaxCountFood = 150;
+    public int CountFoodUnikZone;
 }
 
 [Serializable]

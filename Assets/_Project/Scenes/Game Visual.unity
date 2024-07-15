@@ -2867,6 +2867,7 @@ GameObject:
   - component: {fileID: 479067272}
   - component: {fileID: 479067274}
   - component: {fileID: 479067273}
+  - component: {fileID: 479067275}
   m_Layer: 0
   m_Name: MoveJostick
   m_TagString: Untagged
@@ -2932,6 +2933,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479067271}
   m_CullTransparentMesh: 1
+--- !u!114 &479067275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479067271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410ab52566af4124788820293ff17778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &531527211
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,9 +4088,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1402459152}
     - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
+      propertyPath: _moveJostick
+      value: 
+      objectReference: {fileID: 479067275}
+    - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
+      propertyPath: _playerMover
+      value: 
+      objectReference: {fileID: 1111417671}
+    - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
       propertyPath: _topSharksUI
       value: 
-      objectReference: {fileID: 1753809865}
+      objectReference: {fileID: 1753809867}
     - target: {fileID: 4127180605222727964, guid: f4dd1551f927ed348b6c0b37439fa175, type: 3}
       propertyPath: _soundHandler
       value: 
@@ -4215,6 +4236,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 7353193883029942473, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+      propertyPath: _crown
+      value: 
+      objectReference: {fileID: 1111417667}
+    - target: {fileID: 7353193883029942473, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+      propertyPath: NickName
+      value: 
+      objectReference: {fileID: 1111417669}
+    - target: {fileID: 7353193883029942473, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+      propertyPath: ScoreLevelBar
+      value: 
+      objectReference: {fileID: 1111417670}
     - target: {fileID: 8009091788288978170, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
       propertyPath: _screenStick
       value: 
@@ -4264,11 +4297,49 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+--- !u!1 &1111417667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2774344427803077457, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+  m_PrefabInstance: {fileID: 1111417666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1111417668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8693897820540530362, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
   m_PrefabInstance: {fileID: 1111417666}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1111417669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6050678662556100116, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+  m_PrefabInstance: {fileID: 1111417666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b12df83b1b93cc4d8f8616d8cca1ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1111417670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3824519813334005044, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+  m_PrefabInstance: {fileID: 1111417666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7385f9f1bca8e4dac19522e8b888b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1111417671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8009091788288978170, guid: ce532a821b3d34a4685c2a11d0a8d531, type: 3}
+  m_PrefabInstance: {fileID: 1111417666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf645e0d4e3c344a8ec1dffd61e398b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1143991569 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8586068573074315632, guid: 4a52748f55b8bcc4e8efcf2839fb838e, type: 3}
@@ -5341,7 +5412,7 @@ GameObject:
   - component: {fileID: 1753809864}
   - component: {fileID: 1753809863}
   - component: {fileID: 1753809866}
-  - component: {fileID: 1753809865}
+  - component: {fileID: 1753809867}
   m_Layer: 5
   m_Name: TopSharks
   m_TagString: Untagged
@@ -5411,25 +5482,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753809861}
   m_CullTransparentMesh: 1
---- !u!114 &1753809865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753809861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0375e12828ad5b24783e0a3a51951991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _contentPanel: {fileID: 1753809862}
-  _sharkTexts:
-  - {fileID: 1336773552}
-  - {fileID: 1379843608}
-  - {fileID: 217779628}
-  - {fileID: 1725060420}
-  - {fileID: 461427168}
 --- !u!114 &1753809866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5456,6 +5508,25 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1753809867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753809861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f029f3b851fb80248821c208b5589a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contentPanel: {fileID: 1753809862}
+  _sharkTexts:
+  - {fileID: 1336773552}
+  - {fileID: 1379843608}
+  - {fileID: 217779628}
+  - {fileID: 1725060420}
+  - {fileID: 461427168}
 --- !u!1 &1808591604
 GameObject:
   m_ObjectHideFlags: 0

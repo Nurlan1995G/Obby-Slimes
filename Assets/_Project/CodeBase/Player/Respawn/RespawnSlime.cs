@@ -29,7 +29,7 @@ namespace Assets.Project.CodeBase.Player.Respawn
         public void Revenge()
         {
             if (_killerShark != null)
-                _killerShark.Destroys();
+                _killerShark.Destroy();
 
             Respawn();
         }

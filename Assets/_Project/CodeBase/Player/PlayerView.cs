@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class PlayerView : Slime
 {
-    [SerializeField] private PlayerTrigger _playerTrigger;
-    [SerializeField] private PlayerMover _mover;
     [SerializeField] private EffectCoin _effectCoin;
 
     private UIPopup _uiPopup;
@@ -22,12 +20,9 @@ public class PlayerView : Slime
         , BoostButtonUI boostButtonUI, SoundHandler soundHandler, RespawnSlime respawnSlime, PlayerInput playerInput)
     {
         _respawn = respawnSlime;
-
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
         _uiPopup = uiPopup ?? throw new ArgumentNullException(nameof(uiPopup));
         _soundhandler = soundHandler ?? throw new ArgumentNullException(nameof(soundHandler));
-
-        _mover.Construct(gameConfig.PlayerData, boostButtonUI, playerInput);
     }
 
     public void Destroy(SlimeModel killerShark = null)
