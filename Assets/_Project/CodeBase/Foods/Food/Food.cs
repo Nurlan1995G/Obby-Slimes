@@ -1,7 +1,8 @@
+using Assets._Project.CodeBase.Foods.Interface;
 using System;
 using UnityEngine;
 
-public abstract class Food : MonoBehaviour
+public abstract class Food : MonoBehaviour, IDestroyFood
 {
     [field: SerializeField] public GameObject FoodScale;
     [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFood;
@@ -24,7 +25,7 @@ public abstract class Food : MonoBehaviour
     private void Update() =>
         UpdateScoreTextColor();
 
-    public void Destroys()
+    public void Destroy()
     {
         FoodDied?.Invoke(this);
         Destroy(gameObject);

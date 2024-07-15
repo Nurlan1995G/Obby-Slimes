@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Project.CodeBase.Player.UI
 {
@@ -8,42 +9,44 @@ namespace Assets.Project.CodeBase.Player.UI
         [SerializeField] private float _fadeSpeed = 5f;
         [SerializeField] private float _value = 0.1f;
 
-        [field: SerializeField] public CanvasGroup CanvasGroup;
-
-        public bool IsFadingOut = false;
+        [SerializeField] private List<CanvasGroup> _canvasGroup;
 
         private Vector3 _initialPosition;
+        private bool _isFadingOut = false;
         private float _positionY = 0.8f;
+
+        private void OnEnable()
+        {
+            _canvasGroup.alpha = 1f;
+            _initialPosition.y = _positionY;
+            transform.localPosition = _initialPosition;
+        }
 
         private void Start()
         {
             _initialPosition = transform.localPosition;
         }
 
-        private void OnEnable()
-        {
-            CanvasGroup.alpha = 1f;
-            _initialPosition.y = _positionY;
-            transform.localPosition = _initialPosition;
-        }
-
         void Update()
         {
             transform.localPosition += Vector3.up * _moveSpeed * Time.deltaTime;
 
-            if (IsFadingOut)
+            if (_isFadingOut)
             {
-                CanvasGroup.alpha -= _fadeSpeed * Time.deltaTime;
+                _canvasGroup.alpha -= _fadeSpeed * Time.deltaTime;
 
-                if (CanvasGroup.alpha <= 0f)
+                if (_canvasGroup.alpha <= 0f)
                 {
-                    CanvasGroup.alpha = 0f;
+                    _canvasGroup.alpha = 0f;
                     gameObject.SetActive(false);
-                    IsFadingOut = false;
+                    _isFadingOut = false;
                     transform.localPosition = _initialPosition;
                 }
             }
         }
+
+        public bool SetToFadingOut(bool isFading) =>
+            _isFadingOut = isFading;
 
         public void SetNewInitPosition()
         {

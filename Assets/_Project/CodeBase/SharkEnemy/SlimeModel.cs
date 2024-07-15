@@ -1,16 +1,8 @@
-﻿using System;
-using UnityEngine;
-
-namespace Assets.Project.CodeBase.SharkEnemy
+﻿namespace Assets.Project.CodeBase.SharkEnemy
 {
     public class SlimeModel : Slime
     {
-        [SerializeField] private TriggerSlimeEnemy _triggerSharkEnemy;
-        
         private string _nickName;
-
-        public void Destroys() =>
-            Destroy(gameObject);
 
         public void SetNickName(string name)
         {
@@ -22,5 +14,8 @@ namespace Assets.Project.CodeBase.SharkEnemy
         {
             return _nickName ?? "Unknown Shark";
         }
+
+        public void Destroy() => 
+            Destroy(gameObject);
     }
 }

@@ -12,7 +12,7 @@ public class TriggerSlimeEnemy : MonoBehaviour
             if (_sharkModel.ScoreLevel >= fish.ScoreLevel)
             {
                 _sharkModel.AddScore(fish.ScoreLevel);
-                fish.Destroys();
+                fish.Destroy();
             }
          }
 
@@ -31,7 +31,7 @@ public class TriggerSlimeEnemy : MonoBehaviour
                 && targetSharkModel.ScoreLevel > 1)
             {
                 _sharkModel.AddScore(targetSharkModel.ScoreLevel);
-                targetSharkModel.Destroys();
+                targetSharkModel.Destroy();
             }
         }
     }

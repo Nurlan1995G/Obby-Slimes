@@ -23,15 +23,6 @@ public class PlayerMover : MonoBehaviour
         _boostButtonUI.Initialize(this);
     }
 
-    private void Start()
-    {
-        if (Application.isMobilePlatform)
-        {
-            _screenStick.gameObject.SetActive(true);
-            _boostButtonUI.gameObject.SetActive(true);
-        }
-    }
-
     private void OnEnable()
     {
         _input.Enable();
