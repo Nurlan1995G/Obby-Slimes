@@ -1,2 +1,2 @@
-Build path: C:/Users/Нурлан/Documents/GitHub/ObbyShark3D/Build
-Build number: 33
+Build path: C:/ProjectUnity/Obby-Slimes/Build
+Build number: 35
