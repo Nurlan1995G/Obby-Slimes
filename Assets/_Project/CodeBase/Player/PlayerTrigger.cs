@@ -33,7 +33,6 @@ public class PlayerTrigger : Interactable
 
     private void ShowCoinEffect()
     {
-        _canvasCoinEffect.gameObject.SetActive(true);
-        _canvasCoinEffect.SetToFadingOut(true);
+        _canvasCoinEffect.ActivateCoin();
     }
 }
