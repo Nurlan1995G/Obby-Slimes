@@ -3,7 +3,7 @@ using Assets.Project.CodeBase.SharkEnemy;
 using System;
 using UnityEngine;
 
-public abstract class Slime : MonoBehaviour
+public abstract class Slime : MonoBehaviour, IDestroyableSlime
 {
     [field: SerializeField] protected ScoreLevelBar ScoreLevelBar;
     [SerializeField] protected GameObject SharkSkin;
@@ -21,6 +21,7 @@ public abstract class Slime : MonoBehaviour
     private float _radius = 1.3f;
 
     public int ScoreLevel => Score;
+
     public event Action OnScoreChanged;
 
     private void Awake()
@@ -49,6 +50,11 @@ public abstract class Slime : MonoBehaviour
 
     public abstract string GetSharkName();
 
+    public void Destroy()
+    {
+        Destroyable();
+    }
+
     public void SetCrown(bool isActive) => 
         _crown.SetActive(isActive);
 
@@ -61,7 +67,10 @@ public abstract class Slime : MonoBehaviour
     }
 
     public virtual void SetPlayerViewWallet() { }
+    
     public virtual void SetPlayerViewHeightCoins() { }
+
+    public virtual void Destroyable() { }
     
     public void SetBoxCollider() 
     {

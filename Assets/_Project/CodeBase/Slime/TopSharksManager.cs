@@ -4,7 +4,7 @@ using System.Linq;
 public class TopSharksManager
 {
     private List<Slime> _sharks = new List<Slime>();
-    private TopSharksUI _topSharksUI;
+    private TopSlimeUI _topSharksUI;
 
     public void RegisterShark(Slime shark)
     {
@@ -24,7 +24,7 @@ public class TopSharksManager
         }
     }
 
-    public void SetUI(TopSharksUI topSharksUI)
+    public void SetUI(TopSlimeUI topSharksUI)
     {
         _topSharksUI = topSharksUI;
         UpdateTopSharks();

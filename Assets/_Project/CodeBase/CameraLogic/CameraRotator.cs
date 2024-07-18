@@ -1,6 +1,5 @@
 ﻿using Cinemachine;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,9 +10,8 @@ namespace Assets.CodeBase.CameraLogic
         [SerializeField] private VariableJoystick _variableJoystick;
         [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
 
-        [SerializeField] private float _hideDistance = 20f;
-
         private RotateInput _rotateInput;
+        private ScoreLevelBarFoodManager _scoreLevelBarFoodManager;
         private CameraRotateData _cameraRotateData;
 
         private float _currentXRotation;
@@ -22,18 +20,14 @@ namespace Assets.CodeBase.CameraLogic
         private Vector2 _lastDirection;
         private Vector3 _currentMousePosition;
 
-        private List<ScoreLevelBarFood> _scoreLevelBarFishes = new List<ScoreLevelBarFood>();
-        private float _updateInterval = 1f; 
-        private float _nextUpdate;
-
         private Action _rotationCameraAction;
 
-        private void Awake()
+        public void Construct(GameConfig gameConfig, RotateInput rotateInput, 
+            ScoreLevelBarFoodManager scoreLevelBarFoodManager)
         {
-            _rotateInput = new RotateInput();
-            _rotateInput.Enable();
-
-            UpdateScoreLevelBarFishes();
+            _cameraRotateData = gameConfig.CameraRotateData;
+            _rotateInput = rotateInput;
+            _scoreLevelBarFoodManager = scoreLevelBarFoodManager;
 
             if (Application.isMobilePlatform)
                 _rotationCameraAction = HandleTouchInput;
@@ -41,18 +35,16 @@ namespace Assets.CodeBase.CameraLogic
                 _rotationCameraAction = ControlRotation;
         }
 
-        private void OnEnable() =>
+        private void OnEnable()
+        {
+            _rotateInput.Enable();
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
+            _scoreLevelBarFoodManager.OnEnable();
+        }
 
         private void Update()
         {
-            if (Time.time >= _nextUpdate)
-            {
-                UpdateScoreLevelBarFishes();
-                _nextUpdate = Time.time + _updateInterval;
-            }
-
-            CheckScoreLevelBarFishDistances();
+            _scoreLevelBarFoodManager.CheckScoreLevelBarFoodDistances();
 
             _rotationCameraAction.Invoke();
         }
@@ -62,10 +54,8 @@ namespace Assets.CodeBase.CameraLogic
             _rotateInput.Disable();
 
             _rotateInput.Mouse.MouseSrollWheel.performed -= OnTouchMouseScrollWheel;
+            _scoreLevelBarFoodManager.OnDisable();
         }
-
-        public void Construct(GameConfig gameConfig) =>
-            _cameraRotateData = gameConfig.CameraRotateData;
 
         private void ControlRotation()
         {
@@ -150,8 +140,8 @@ namespace Assets.CodeBase.CameraLogic
         {
             if (_lastDirection != direction)
             {
-                _currentXRotation += direction.x * _cameraRotateData.RotateSpeed * Time.deltaTime;
-                _currentYRotation += -direction.y * _cameraRotateData.RotateSpeed * Time.deltaTime;
+                _currentXRotation += direction.x * _cameraRotateData.RotateSpeedPC * Time.deltaTime;
+                _currentYRotation += -direction.y * _cameraRotateData.RotateSpeedPC * Time.deltaTime;
 
                 _currentYRotation = Mathf.Clamp(_currentYRotation, -45f, 90f);
 
@@ -160,20 +150,6 @@ namespace Assets.CodeBase.CameraLogic
 
                 transform.rotation = rotationX * rotationY;
                 _lastDirection = direction;
-            }
-        }
-
-        private void UpdateScoreLevelBarFishes() => 
-            _scoreLevelBarFishes.AddRange(FindObjectsOfType<ScoreLevelBarFood>());
-
-        private void CheckScoreLevelBarFishDistances()
-        {
-            _scoreLevelBarFishes.RemoveAll(fish => fish == null);
-
-            foreach (var fish in _scoreLevelBarFishes)
-            {
-                float distance = Vector3.Distance(transform.position, fish.transform.position);
-                fish.gameObject.SetActive(distance <= _hideDistance);
             }
         }
     }

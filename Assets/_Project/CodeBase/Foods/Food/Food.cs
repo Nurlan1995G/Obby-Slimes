@@ -2,10 +2,10 @@ using Assets._Project.CodeBase.Foods.Interface;
 using System;
 using UnityEngine;
 
-public abstract class Food : MonoBehaviour, IDestroyFood
+public abstract class Food : MonoBehaviour, IDestroyable
 {
     [field: SerializeField] public GameObject FoodScale;
-    [SerializeField] protected ScoreLevelBarFood ScoreLevelBarFood;
+    [field: SerializeField] public ScoreLevelBarFood ScoreLevelBarFood;
 
     private Slime _playerView;
 

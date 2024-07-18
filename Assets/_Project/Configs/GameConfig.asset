@@ -22,10 +22,12 @@ MonoBehaviour:
   SharkBotData:
     MoveSpeed: 5
     RotateSpeed: 4
-    MinimalDistanceToObject: 15
+    MinimalDistanceToObject: 25
     StoppingTimeChase: 15
   CameraRotateData:
-    RotateSpeed: 250
+    RotateSpeedPC: 250
+    RotateSpeedMobile: 150
     MinZoomDistance: 10
     MaxZoomDistance: 30
     ZoomStep: 0.01
+    HideDistance: 50
