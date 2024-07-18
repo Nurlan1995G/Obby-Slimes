@@ -15,26 +15,25 @@ public class PlayerView : Slime
     private SoundHandler _soundhandler;
 
     public Action<PlayerView> PlayerDied;
+    private Language _language;
 
     public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
-        , BoostButtonUI boostButtonUI, SoundHandler soundHandler, RespawnSlime respawnSlime, PlayerInput playerInput)
+        , BoostButtonUI boostButtonUI, SoundHandler soundHandler, RespawnSlime respawnSlime, PlayerInput playerInput, Language language)
     {
         _respawn = respawnSlime;
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));
         _uiPopup = uiPopup ?? throw new ArgumentNullException(nameof(uiPopup));
         _soundhandler = soundHandler ?? throw new ArgumentNullException(nameof(soundHandler));
+        _language = language;
     }
 
-    public void Destroy(SlimeModel killerShark = null)
+    public override void Destroyable()
     {
         PlayerDied?.Invoke(this);
         _soundhandler.PlayLose();
         SetInitialSizeBox();
         gameObject.SetActive(false);
         ScoreLevelBar.SetInitialPositionY();
-
-        if (killerShark != null)
-            _respawn.SetKillerShark(killerShark, this, _uiPopup);
 
         _respawn.SelectAction();
     }
@@ -67,7 +66,17 @@ public class PlayerView : Slime
 
     public override string GetSharkName()
     {
-        NickName.NickNameText.text = AssetAdress.NickPlayer;
-        return AssetAdress.NickPlayer;
+        if (_language == Language.Russian)
+        {
+            NickName.NickNameText.text = AssetAdress.NickPlayerRu;
+            return AssetAdress.NickPlayerRu;
+        }
+        else if (_language == Language.English)
+        {
+            NickName.NickNameText.text = AssetAdress.NickPlayerEn;
+            return AssetAdress.NickPlayerEn;
+        }
+
+        return null;
     }
 }

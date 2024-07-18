@@ -32,8 +32,10 @@ public class SlimeBotData
 [Serializable]
 public class CameraRotateData
 {
-    public float RotateSpeed;
+    public float RotateSpeedPC;
+    public float RotateSpeedMobile;
     public float MinZoomDistance;
     public float MaxZoomDistance;
     public float ZoomStep;
+    public float HideDistance;
 }

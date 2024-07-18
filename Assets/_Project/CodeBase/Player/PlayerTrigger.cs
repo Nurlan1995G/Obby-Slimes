@@ -1,6 +1,6 @@
 ﻿using Assets._Project.CodeBase.Foods.Interface;
+using Assets._Project.CodeBase.Slime.Interface;
 using Assets.Project.CodeBase.Player.UI;
-using Assets.Project.CodeBase.SharkEnemy;
 using UnityEngine;
 
 public class PlayerTrigger : Interactable
@@ -10,7 +10,7 @@ public class PlayerTrigger : Interactable
 
     protected override void Interact(Collider other)
     {
-        if(other.TryGetComponent(out IDestroyFood fish))
+        if(other.TryGetComponent(out IDestroyable fish))
         {
             if (_playerView.ScoreLevel >= fish.ScoreLevel)
             {
@@ -20,19 +20,17 @@ public class PlayerTrigger : Interactable
             }
         }
 
-        if (other.TryGetComponent(out SlimeModel sharkModel))
+        if (other.TryGetComponent(out IDestroyableSlime slimeModel))
         {
-            if (_playerView.ScoreLevel > sharkModel.ScoreLevel && sharkModel.ScoreLevel > 1)
+            if (_playerView.ScoreLevel > slimeModel.ScoreLevel && slimeModel.ScoreLevel > 1)
             {
-                _playerView.AddScore(sharkModel.ScoreLevel);
-                sharkModel.Destroy();
+                _playerView.AddScore(slimeModel.ScoreLevel);
+                slimeModel.Destroy();
                 ShowCoinEffect();
             }
         }
     }
 
-    private void ShowCoinEffect()
-    {
+    private void ShowCoinEffect() => 
         _canvasCoinEffect.ActivateCoin();
-    }
 }

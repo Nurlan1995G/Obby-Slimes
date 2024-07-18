@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class SpawnerFood : MonoBehaviour
     private Coroutine _spawnCoroutine;
 
     public List<Food> Foods => _foods;
+
+    public event Action<Food> FoodSpawned;
 
     public void Construct(FoodFactory fishFactory, ServesSelectTypeFood random, PlayerView playerView, ConfigFood configFish)
     {
@@ -65,11 +68,11 @@ public class SpawnerFood : MonoBehaviour
     {
         Vector3 spawnPosition;
 
-        float positionUnikX = Random.Range(150, 80);
-        float positionUnikZ = Random.Range(125, 25);
+        float positionUnikX = UnityEngine.Random.Range(150, 80);
+        float positionUnikZ = UnityEngine.Random.Range(125, 25);
 
-        float positionX = Random.Range(-33, 260);
-        float positionZ = Random.Range(-80, 215);
+        float positionX = UnityEngine.Random.Range(-33, 260);
+        float positionZ = UnityEngine.Random.Range(-80, 215);
 
         if(_foods.Count <= _spawnerFoodData.CountFoodUnikZone)
             spawnPosition = new Vector3(positionUnikX, 0, positionUnikZ);
@@ -82,6 +85,8 @@ public class SpawnerFood : MonoBehaviour
         AddFood(food);
 
         food.Construct(_playerView);
+
+        FoodSpawned?.Invoke(food);
     }
 
     private void AddFood(Food food)

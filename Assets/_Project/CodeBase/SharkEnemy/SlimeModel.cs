@@ -15,7 +15,7 @@
             return _nickName ?? "Unknown Shark";
         }
 
-        public void Destroy() => 
+        public override void Destroyable() => 
             Destroy(gameObject);
     }
 }
