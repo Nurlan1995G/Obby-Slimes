@@ -86,6 +86,7 @@ public class Bootstraper : MonoBehaviour
             _boostButtonUI.SetMobilePlatform();
             _moveJostick.gameObject.SetActive(true);
             _boostButtonUI.gameObject.SetActive(true);
+            Debug.Log("Мобильная платформа");
         }
     }
 }
