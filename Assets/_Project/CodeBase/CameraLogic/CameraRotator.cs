@@ -27,7 +27,7 @@ namespace Assets.CodeBase.CameraLogic
         {
             _cameraRotateData = gameConfig.CameraRotateData;
             _rotateInput = rotateInput;
-            _scoreLevelBarFoodManager = scoreLevelBarFoodManager;
+            _scoreLevelBarFoodManager = scoreLevelBarFoodManager ?? throw new ArgumentNullException(nameof(scoreLevelBarFoodManager));
 
             if (Application.isMobilePlatform)
                 _rotationCameraAction = HandleTouchInput;
@@ -59,12 +59,12 @@ namespace Assets.CodeBase.CameraLogic
 
         private void ControlRotation()
         {
-            if (_variableJoystick.enabled && _currentMousePosition != Input.mousePosition)
+            if (_variableJoystick.enabled && _currentMousePosition != UnityEngine.Input.mousePosition)
             {
                 _cinemachineFreeLook.m_XAxis.m_InputAxisValue = _variableJoystick.Horizontal;
                 _cinemachineFreeLook.m_YAxis.m_InputAxisValue = _variableJoystick.Vertical;
                 
-                _currentMousePosition = Input.mousePosition;
+                _currentMousePosition = UnityEngine.Input.mousePosition;
             }
             else
             {
@@ -76,10 +76,10 @@ namespace Assets.CodeBase.CameraLogic
 
         private void HandleTouchInput()
         {
-            if (Input.touchCount == 2)
+            if (UnityEngine.Input.touchCount == 2)
             {
-                Touch touch1 = Input.GetTouch(0);
-                Touch touch2 = Input.GetTouch(1);
+                Touch touch1 = UnityEngine.Input.GetTouch(0);
+                Touch touch2 = UnityEngine.Input.GetTouch(1);
 
                 if (_variableJoystick.enabled)
                 {
@@ -97,7 +97,7 @@ namespace Assets.CodeBase.CameraLogic
                     }
                 }
             }
-            else if (Input.touchCount == 1)
+            else if (UnityEngine.Input.touchCount == 1)
             {
                 ControlRotation();
             }

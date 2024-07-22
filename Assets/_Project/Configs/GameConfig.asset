@@ -28,6 +28,6 @@ MonoBehaviour:
     RotateSpeedPC: 250
     RotateSpeedMobile: 150
     MinZoomDistance: 10
-    MaxZoomDistance: 30
+    MaxZoomDistance: 40
     ZoomStep: 0.01
     HideDistance: 50
