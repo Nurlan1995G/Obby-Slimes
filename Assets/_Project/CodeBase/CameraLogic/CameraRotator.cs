@@ -2,7 +2,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 namespace Assets.CodeBase.CameraLogic
 {
@@ -28,18 +27,12 @@ namespace Assets.CodeBase.CameraLogic
         {
             _cameraRotateData = gameConfig.CameraRotateData;
             _rotateInput = rotateInput;
-            _scoreLevelBarFoodManager = scoreLevelBarFoodManager;
+            _scoreLevelBarFoodManager = scoreLevelBarFoodManager ?? throw new ArgumentNullException(nameof(scoreLevelBarFoodManager));
 
             if (Application.isMobilePlatform)
-            {
                 _rotationCameraAction = HandleTouchInput;
-                Debug.Log("Мобилка");
-            }
             else
-            {
                 _rotationCameraAction = ControlRotation;
-                Debug.Log("Комп");
-            }
         }
 
         private void OnEnable()
