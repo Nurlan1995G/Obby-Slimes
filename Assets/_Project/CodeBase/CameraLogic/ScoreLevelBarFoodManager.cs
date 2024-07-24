@@ -16,8 +16,8 @@ namespace Assets.CodeBase.CameraLogic
             _foods = new List<Food>();
 
             _hideDistance = hideDistance;
-            _cameraTransform = cameraTransform;
-            _spawnerFood = spawnerFood;
+            _cameraTransform = cameraTransform ?? throw new System.ArgumentNullException(nameof(cameraTransform));
+            _spawnerFood = spawnerFood ?? throw new System.ArgumentNullException(nameof(spawnerFood));
 
             OnEnable();
         }

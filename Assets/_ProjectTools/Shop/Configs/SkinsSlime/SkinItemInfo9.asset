@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 31596
   ItemType: 0
   CashType: 0
-  Price: 5000
+  Price: 100000
   Icon: {fileID: 21300000, guid: 6895a45b96e456d42809120371cf741b, type: 3}
   ShopPreview: {fileID: 902193192768341117, guid: 63576c8928182a546889940685858ee2, type: 3}
   YanId: 0

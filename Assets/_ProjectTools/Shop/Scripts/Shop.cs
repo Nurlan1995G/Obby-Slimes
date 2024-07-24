@@ -41,8 +41,8 @@ public class Shop : MonoBehaviour
         if (_skinButton != null)
             _skinButton.Click += OnSkinButtonClick;
 
-        if (_objectButton != null)
-            _objectButton.Click += OnObjectButtonClick;
+        /*if (_objectButton != null)
+            _objectButton.Click += OnObjectButtonClick;*/
 
         /*if (_trailButton != null)
             _trailButton.Click += OnTrailButtonClick;*/
@@ -68,8 +68,8 @@ public class Shop : MonoBehaviour
         if (_skinButton != null)
             _skinButton.Click -= OnSkinButtonClick;
 
-        if (_objectButton != null)
-            _objectButton.Click -= OnObjectButtonClick;
+        /*if (_objectButton != null)
+            _objectButton.Click -= OnObjectButtonClick;*/
 
         /*if (_trailButton != null)
             _trailButton.Click -= OnTrailButtonClick;*/
@@ -249,7 +249,7 @@ public class Shop : MonoBehaviour
     private void OnSkinButtonClick()
     {
         _skinButton.Select();
-        _objectButton.UnSelect();
+        //_objectButton.UnSelect();
         //_trailButton.UnSelect();
         //_animalButton.UnSelect();
         //_softButton.UnSelect();
@@ -260,7 +260,7 @@ public class Shop : MonoBehaviour
     private void OnObjectButtonClick()
     {
         _skinButton.UnSelect();
-        _objectButton.Select();
+        //_objectButton.Select();
         //_trailButton.UnSelect();
         //_animalButton.UnSelect();
         //_softButton.UnSelect();
@@ -271,7 +271,7 @@ public class Shop : MonoBehaviour
     private void OnTrailButtonClick()
     {
         _skinButton.UnSelect();
-        _objectButton.UnSelect();
+        //_objectButton.UnSelect();
         //_trailButton.Select();
         //_animalButton.UnSelect();
         //_softButton.UnSelect();
@@ -282,7 +282,7 @@ public class Shop : MonoBehaviour
     private void OnAnimalButtonClick()
     {
         _skinButton.UnSelect();
-        _objectButton.UnSelect();
+        //_objectButton.UnSelect();
         //_trailButton.UnSelect();
         //_animalButton.Select();
         //_softButton.UnSelect();
@@ -293,7 +293,7 @@ public class Shop : MonoBehaviour
     private void OnSoftButtonClick()
     {
         _skinButton.UnSelect();
-        _objectButton.UnSelect();
+        //_objectButton.UnSelect();
         //_trailButton.UnSelect();
         //_animalButton.UnSelect();
         //_softButton.Select();

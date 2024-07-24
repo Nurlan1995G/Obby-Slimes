@@ -26,6 +26,7 @@ public class BuyButton : MonoBehaviour
         switch (itemInfo.CashType)
         {
             case CashType.Coin:
+
                 if (Wallet.CoinValue < itemInfo.Price)
                 {
                     _button.interactable = false;

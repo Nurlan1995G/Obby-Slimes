@@ -1,5 +1,5 @@
 ﻿using Cinemachine;
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +11,6 @@ namespace Assets.CodeBase.CameraLogic
         [SerializeField] private CinemachineFreeLook _cinemachineFreeLook;
 
         private RotateInput _rotateInput;
-        private ScoreLevelBarFoodManager _scoreLevelBarFoodManager;
         private CameraRotateData _cameraRotateData;
 
         private float _currentXRotation;
@@ -20,33 +19,36 @@ namespace Assets.CodeBase.CameraLogic
         private Vector2 _lastDirection;
         private Vector3 _currentMousePosition;
 
-        private Action _rotationCameraAction;
+        private List<ScoreLevelBarFood> _scoreLevelBarFishes = new List<ScoreLevelBarFood>();
+        private float _updateInterval = 1f;
+        private float _nextUpdate;
 
-        public void Construct(GameConfig gameConfig, RotateInput rotateInput, 
-            ScoreLevelBarFoodManager scoreLevelBarFoodManager)
+        public void Construct(GameConfig gameConfig, RotateInput rotateInput)
         {
             _cameraRotateData = gameConfig.CameraRotateData;
             _rotateInput = rotateInput;
-            _scoreLevelBarFoodManager = scoreLevelBarFoodManager ?? throw new ArgumentNullException(nameof(scoreLevelBarFoodManager));
 
-            if (Application.isMobilePlatform)
-                _rotationCameraAction = HandleTouchInput;
-            else
-                _rotationCameraAction = ControlRotation;
-        }
-
-        private void OnEnable()
-        {
             _rotateInput.Enable();
+
+            UpdateScoreLevelBarFishes();
+            
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
-            _scoreLevelBarFoodManager.OnEnable();
         }
 
         private void Update()
         {
-            _scoreLevelBarFoodManager.CheckScoreLevelBarFoodDistances();
+            if (Time.time >= _nextUpdate)
+            {
+                UpdateScoreLevelBarFishes();
+                _nextUpdate = Time.time + _updateInterval;
+            }
 
-            _rotationCameraAction.Invoke();
+            CheckScoreLevelBarFishDistances();
+
+            if (Application.isMobilePlatform)
+                HandleTouchInput();
+            else
+                ControlRotation();
         }
 
         private void OnDisable()
@@ -54,32 +56,30 @@ namespace Assets.CodeBase.CameraLogic
             _rotateInput.Disable();
 
             _rotateInput.Mouse.MouseSrollWheel.performed -= OnTouchMouseScrollWheel;
-            _scoreLevelBarFoodManager.OnDisable();
         }
 
         private void ControlRotation()
         {
-            if (_variableJoystick.enabled && _currentMousePosition != UnityEngine.Input.mousePosition)
+            if (_variableJoystick.enabled && _currentMousePosition != Input.mousePosition)
             {
                 _cinemachineFreeLook.m_XAxis.m_InputAxisValue = _variableJoystick.Horizontal;
                 _cinemachineFreeLook.m_YAxis.m_InputAxisValue = _variableJoystick.Vertical;
-                
-                _currentMousePosition = UnityEngine.Input.mousePosition;
+
+                _currentMousePosition = Input.mousePosition;
             }
             else
             {
                 _cinemachineFreeLook.m_XAxis.m_InputAxisValue = 0;
                 _cinemachineFreeLook.m_YAxis.m_InputAxisValue = 0;
             }
-
         }
 
         private void HandleTouchInput()
         {
-            if (UnityEngine.Input.touchCount == 2)
+            if (Input.touchCount == 2)
             {
-                Touch touch1 = UnityEngine.Input.GetTouch(0);
-                Touch touch2 = UnityEngine.Input.GetTouch(1);
+                Touch touch1 = Input.GetTouch(0);
+                Touch touch2 = Input.GetTouch(1);
 
                 if (_variableJoystick.enabled)
                 {
@@ -97,7 +97,7 @@ namespace Assets.CodeBase.CameraLogic
                     }
                 }
             }
-            else if (UnityEngine.Input.touchCount == 1)
+            else if (Input.touchCount == 1)
             {
                 ControlRotation();
             }
@@ -150,6 +150,20 @@ namespace Assets.CodeBase.CameraLogic
 
                 transform.rotation = rotationX * rotationY;
                 _lastDirection = direction;
+            }
+        }
+
+        private void UpdateScoreLevelBarFishes() =>
+            _scoreLevelBarFishes.AddRange(FindObjectsOfType<ScoreLevelBarFood>());
+
+        private void CheckScoreLevelBarFishDistances()
+        {
+            _scoreLevelBarFishes.RemoveAll(fish => fish == null);
+
+            foreach (var fish in _scoreLevelBarFishes)
+            {
+                float distance = Vector3.Distance(transform.position, fish.transform.position);
+                fish.gameObject.SetActive(distance <= _cameraRotateData.HideDistance);
             }
         }
     }
