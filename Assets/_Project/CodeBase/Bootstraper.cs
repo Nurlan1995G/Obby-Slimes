@@ -15,7 +15,7 @@ public class Bootstraper : MonoBehaviour
     [SerializeField] private PlayerView _playerView;
     [SerializeField] private PlayerMover _playerMover;
     [SerializeField] private List<SpawnPointEnemyBot> _spawnPoints;
-    [SerializeField] private CameraRotator _cameraRotater;
+    [SerializeField] private CameraRotater _cameraRotater;
     [SerializeField] private ConfigFood _configFood;
     [SerializeField] private UIPopup _uiPopup;
     [SerializeField] private BoostButtonUI _boostButtonUI;
@@ -36,12 +36,13 @@ public class Bootstraper : MonoBehaviour
         RespawnSlime respawnSlime = new RespawnSlime(_uiPopup, _playerView);
         PlayerInput playerInput = new PlayerInput();
         RotateInput rotateInput = new RotateInput();
-        ScoreLevelBarFoodManager barFoodManager = new ScoreLevelBarFoodManager(_gameConfig.CameraRotateData.HideDistance, _cameraRotater.transform, _spawnerFood);
+        ScoreLevelBarFoodManager scoreLevelBarFoodManager = new(_gameConfig.CameraRotateData.HideDistance,
+            _cameraRotater.transform, _spawnerFood);
 
         InitSpawner(assetProvider, random);
         WriteSpawnPoint(factoryShark, topSharksManager);
         InitPlayer(topSharksManager, respawnSlime, playerInput);
-        InitCamera(rotateInput, barFoodManager);
+        InitCamera(rotateInput, scoreLevelBarFoodManager);
         InitTopUI(topSharksManager);
         InitMobileUI();
     }
@@ -71,10 +72,8 @@ public class Bootstraper : MonoBehaviour
         _playerMover.Construct(_gameConfig.PlayerData, _boostButtonUI, playerInput);
     }
 
-    private void InitCamera(RotateInput rotateInput, ScoreLevelBarFoodManager scoreLevelBarFoodManager)
-    {
+    private void InitCamera(RotateInput rotateInput, ScoreLevelBarFoodManager scoreLevelBarFoodManager) => 
         _cameraRotater.Construct(_gameConfig, rotateInput, scoreLevelBarFoodManager);
-    }
 
     private void InitTopUI(TopSharksManager topSharksManager) =>
         _topSharksUI.Construct(topSharksManager);
@@ -86,7 +85,6 @@ public class Bootstraper : MonoBehaviour
             _boostButtonUI.SetMobilePlatform();
             _moveJostick.gameObject.SetActive(true);
             _boostButtonUI.gameObject.SetActive(true);
-            Debug.Log("Мобильная платформа");
         }
     }
 }

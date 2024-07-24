@@ -54,7 +54,7 @@ public class PlayerView : Slime
     {
         base.SetPlayerViewWallet();
 
-        Wallet.Add(15);
+        Wallet.Add(5);
     }
 
     public override void SetPlayerViewHeightCoins()
