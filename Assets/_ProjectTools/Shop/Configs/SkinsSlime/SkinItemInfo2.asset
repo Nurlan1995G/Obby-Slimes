@@ -16,8 +16,8 @@ MonoBehaviour:
   ItemType: 0
   CashType: 0
   Price: 300
-  Icon: {fileID: 21300000, guid: c871a4c9baf167e4aab7afc9051237fb, type: 3}
-  ShopPreview: {fileID: 8761460825040621764, guid: 128c4185f501ac54e8fdd2cb9d1fd87c, type: 3}
+  Icon: {fileID: 21300000, guid: 41842cdcb6123184499fdbb0d4883a36, type: 3}
+  ShopPreview: {fileID: 1514277980716326599, guid: 79769750a895a594691f6e78633aaefb, type: 3}
   YanId: 0
   IsDynamic: 1
-  MainMenuPreview: {fileID: 42184649407357953, guid: 96759af1ee2a5204d9d077ad2d85a6e0, type: 3}
+  MainMenuPreview: {fileID: 1262691424677797910, guid: c2fe01bee7c02e744b2632dd68fc236c, type: 3}
