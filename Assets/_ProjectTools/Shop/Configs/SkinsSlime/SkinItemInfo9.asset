@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d631be9d69eb44098e6800739789d3, type: 3}
   m_Name: SkinItemInfo9
   m_EditorClassIdentifier: 
-  Id: 31596
+  Id: 25780
   ItemType: 0
   CashType: 0
-  Price: 100000
+  Price: 6000
   Icon: {fileID: 21300000, guid: 7015887a5a90858499060e50babdaf9b, type: 3}
   ShopPreview: {fileID: 6167404769761864168, guid: 766ae5007ca912f4fadf8d2c8030872a, type: 3}
   YanId: 0

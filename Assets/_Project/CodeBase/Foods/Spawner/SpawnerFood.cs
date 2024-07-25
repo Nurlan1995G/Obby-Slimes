@@ -31,8 +31,6 @@ public class SpawnerFood : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_foods.Count + " - Food");
-
         if (_foods.Count >= _spawnerFoodData.MaxCountFood && _spawnCoroutine != null)
         {
             StopCoroutine(_spawnCoroutine);

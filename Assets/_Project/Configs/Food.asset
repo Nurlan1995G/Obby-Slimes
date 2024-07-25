@@ -19,7 +19,7 @@ MonoBehaviour:
   FoodStaticData:
     PurpleFoodPrefab: {fileID: 5342304770547023060, guid: c608eeb4dbc08944582b17cd61ddc4ac, type: 3}
     ScalePrefabPurple: {x: 0.2, y: 0.2, z: 0.2}
-    MaxCountPurpleFood: 450
+    MaxCountPurpleFood: 600
     ScoreLevelPurple: 1
     GreenFoodPrefab: {fileID: 3295905654225933523, guid: f56a1aca26ced944fbb9d632039ae68b, type: 3}
     ScalePrefabGreen: {x: 0.2, y: 0.2, z: 0.2}
