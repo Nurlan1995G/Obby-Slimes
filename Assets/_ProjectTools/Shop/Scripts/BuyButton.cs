@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuyButton : MonoBehaviour
 {
     [SerializeField] private Button _button;
+    [SerializeField] private Image _image;
     [SerializeField] private GameObject _coinPanel;
     [SerializeField] private GameObject _videoAdPanel;
     [SerializeField] private GameObject _yanPanel;
@@ -31,9 +32,15 @@ public class BuyButton : MonoBehaviour
                 {
                     _button.interactable = false;
                     _noMoneyDisplay.SetActive(true);
+                    _image.enabled = false;
+                    _coinPanel.SetActive(false);
+                }
+                else
+                {
+                    _image.enabled = true;
+                    _coinPanel.SetActive(true);
                 }
 
-                _coinPanel.SetActive(true);
                 _coinPrice.text = itemInfo.Price.ToString();
                 break;
             case CashType.VideoAd:

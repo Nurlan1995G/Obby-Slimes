@@ -1108,7 +1108,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6189850565510446777}
+  m_Father: {fileID: 163323119382976705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1975,7 +1975,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 163323119382976705}
-  - {fileID: 5714364280853033608}
   - {fileID: 8624393254558222826}
   - {fileID: 2486484587950073613}
   m_Father: {fileID: 4180191529662780232}
@@ -2577,6 +2576,7 @@ RectTransform:
   - {fileID: 6113769567976448864}
   - {fileID: 391542235203772733}
   - {fileID: 1334026941478334873}
+  - {fileID: 5714364280853033608}
   m_Father: {fileID: 6189850565510446777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2679,7 +2679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 6155686176068213886}
-  _image: {fileID: 0}
   _coinPanel: {fileID: 1108858048395525912}
   _videoAdPanel: {fileID: 6327338719827823245}
   _yanPanel: {fileID: 7354309324719554404}
