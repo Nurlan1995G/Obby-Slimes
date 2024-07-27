@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Waterr
-  m_Shader: {fileID: 4800000, guid: 3f17d46eadd0bb049ac072eb8db526a6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0fc6fe3cbeb58fb46822b6e42cbede4c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -74,7 +74,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 5930a2cf4b06d4747878f6bdaad8d95f, type: 3}
-        m_Scale: {x: 15, y: 15}
+        m_Scale: {x: 0.2, y: 0.2}
         m_Offset: {x: 1, y: 1}
     - _Mask1:
         m_Texture: {fileID: 0}
@@ -277,8 +277,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BumpSpeed: {r: 0.2, g: 0.2, b: 0.3, a: 0.3}
-    - _Color: {r: 0.06666667, g: 0.6666667, b: 0.92549026, a: 1}
-    - _ColorBack: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5110359, g: 0.8420957, b: 0.98490566, a: 1}
+    - _ColorBack: {r: 0.8792453, g: 0.1642363, b: 0.1642363, a: 1}
     - _DepthColor: {r: 0, g: 0.37459263, b: 0.778, a: 1}
     - _DiffTint: {r: 0.7, g: 0.8, b: 1, a: 1}
     - _DissolveGradientTexture: {r: 1, g: 1, b: 1, a: 1}
