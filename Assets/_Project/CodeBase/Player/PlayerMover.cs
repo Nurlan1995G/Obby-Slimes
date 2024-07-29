@@ -1,4 +1,5 @@
-﻿using Assets.Project.CodeBase.Player.UI;
+﻿using Assets._Project.CodeBase.Player.Skin;
+using Assets.Project.CodeBase.Player.UI;
 using UnityEngine;
 using UnityEngine.AI;
 

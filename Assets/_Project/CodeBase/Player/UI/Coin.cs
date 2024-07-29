@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Project.CodeBase.Player.UI
 {
     public class Coin : MonoBehaviour
     {
-        [field: SerializeField] public CanvasGroup CanvasGroup;
+        [field: SerializeField] public Image ImageCoin;
     }
 }

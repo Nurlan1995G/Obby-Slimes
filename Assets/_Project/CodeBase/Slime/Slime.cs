@@ -50,10 +50,8 @@ public abstract class Slime : MonoBehaviour, IDestroyableSlime
 
     public abstract string GetSharkName();
 
-    public void Destroy()
-    {
+    public void Destroy() =>
         Destroyable();
-    }
 
     public void SetCrown(bool isActive) => 
         _crown.SetActive(isActive);
@@ -68,8 +66,6 @@ public abstract class Slime : MonoBehaviour, IDestroyableSlime
 
     public virtual void SetPlayerViewWallet() { }
     
-    public virtual void SetPlayerViewHeightCoins() { }
-
     public virtual void Destroyable() { }
     
     public void SetBoxCollider() 
@@ -90,7 +86,6 @@ public abstract class Slime : MonoBehaviour, IDestroyableSlime
             ParametrRaising *= 3;
             ScoreLevelBar.IncreasePositionY();
             SetBoxCollider();
-            SetPlayerViewHeightCoins();
         }
     }
 }

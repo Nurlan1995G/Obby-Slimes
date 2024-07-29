@@ -57,13 +57,6 @@ public class PlayerView : Slime
         Wallet.Add(5);
     }
 
-    public override void SetPlayerViewHeightCoins()
-    {
-        base.SetPlayerViewHeightCoins();
-
-        _effectCoin.SetNewInitPosition();
-    }
-
     public override string GetSharkName()
     {
         if (_language == Language.Russian)

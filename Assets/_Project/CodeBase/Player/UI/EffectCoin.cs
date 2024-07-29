@@ -8,22 +8,13 @@ namespace Assets.Project.CodeBase.Player.UI
     {
         [SerializeField] private float _moveSpeed = 1f;
         [SerializeField] private float _fadeSpeed = 5f;
-        [SerializeField] private float _value = 0.1f;
         [SerializeField] private List<Coin> _coins;
 
         private Vector3 _initialPosition;
         private bool _isFadingOut = false;
-        private float _positionY = 0.8f;
 
-        private void OnEnable()
-        {
-            ResetCoin(_coins[0]);
-        }
-
-        private void Start()
-        {
-            _initialPosition = transform.localPosition;
-        }
+        private void Start() =>
+            _initialPosition = new Vector3(120,80,0);
 
         void Update()
         {
@@ -35,12 +26,12 @@ namespace Assets.Project.CodeBase.Player.UI
 
                     if (_isFadingOut)
                     {
-                        coin.CanvasGroup.alpha -= _fadeSpeed * Time.deltaTime;
+                        var color = coin.ImageCoin.color;
+                        color.a -= _fadeSpeed * Time.deltaTime;
+                        coin.ImageCoin.color = color;
 
-                        if (coin.CanvasGroup.alpha <= 0f)
-                        {
+                        if (coin.ImageCoin.color.a <= 0f)
                             ResetCoin(coin);
-                        }
                     }
                 }
             }
@@ -48,7 +39,9 @@ namespace Assets.Project.CodeBase.Player.UI
 
         private void ResetCoin(Coin coin)
         {
-            coin.CanvasGroup.alpha = 1f;
+            var color = coin.ImageCoin.color;
+            color.a = 1f;
+            coin.ImageCoin.color = color;
             coin.transform.localPosition = _initialPosition;
             coin.gameObject.SetActive(false);
         }
@@ -59,16 +52,13 @@ namespace Assets.Project.CodeBase.Player.UI
 
             if (availableCoin != null)
             {
+                var color = availableCoin.ImageCoin.color;
+                color.a = 1f;
+                availableCoin.ImageCoin.color = color;
                 availableCoin.transform.localPosition = _initialPosition;
                 availableCoin.gameObject.SetActive(true);
                 _isFadingOut = true;
             }
-        }
-
-        public void SetNewInitPosition()
-        {
-            _positionY += _value;
-            _initialPosition = new Vector3(0, _positionY, 0);
         }
     }
 }

@@ -31,6 +31,6 @@ public class PlayerTrigger : Interactable
         }
     }
 
-    private void ShowCoinEffect() => 
+    private void ShowCoinEffect() =>
         _canvasCoinEffect.ActivateCoin();
 }
