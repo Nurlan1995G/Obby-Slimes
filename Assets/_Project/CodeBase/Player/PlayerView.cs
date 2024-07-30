@@ -17,8 +17,8 @@ public class PlayerView : Slime
     public Action<PlayerView> PlayerDied;
     private Language _language;
 
-    public void Construct(PositionStaticData positionStaticData,GameConfig gameConfig, UIPopup uiPopup
-        , BoostButtonUI boostButtonUI, SoundHandler soundHandler, RespawnSlime respawnSlime, PlayerInput playerInput, Language language)
+    public void Construct(PositionStaticData positionStaticData,UIPopup uiPopup,
+        BoostButtonUI boostButtonUI, SoundHandler soundHandler,RespawnSlime respawnSlime, Language language)
     {
         _respawn = respawnSlime;
         _positionStaticData = positionStaticData ?? throw new ArgumentNullException(nameof(positionStaticData));

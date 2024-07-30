@@ -16,6 +16,7 @@ namespace Assets.CodeBase.CameraLogic
 
         private float _currentXRotation;
         private float _currentYRotation;
+        private float _sensivity;
 
         private Vector2 _lastDirection;
         private Vector3 _currentMousePosition;
@@ -30,9 +31,15 @@ namespace Assets.CodeBase.CameraLogic
             _scoreLevelBarFoodManager = scoreLevelBarFoodManager ?? throw new ArgumentNullException(nameof(scoreLevelBarFoodManager));
 
             if (Application.isMobilePlatform)
+            {
+                _sensivity = _cameraRotateData.RotateSpeedMobile;
                 _rotationCameraAction = HandleTouchInput;
+            }
             else
+            {
+                _sensivity = _cameraRotateData.RotateSpeedPC;
                 _rotationCameraAction = ControlRotation;
+            }
 
             _rotateInput.Enable();
             _rotateInput.Mouse.MouseSrollWheel.performed += OnTouchMouseScrollWheel;
@@ -140,8 +147,8 @@ namespace Assets.CodeBase.CameraLogic
         {
             if (_lastDirection != direction)
             {
-                _currentXRotation += direction.x * _cameraRotateData.RotateSpeedPC * Time.deltaTime;
-                _currentYRotation += -direction.y * _cameraRotateData.RotateSpeedPC * Time.deltaTime;
+                _currentXRotation += direction.x * _sensivity * Time.deltaTime;
+                _currentYRotation += -direction.y * _sensivity * Time.deltaTime;
 
                 _currentYRotation = Mathf.Clamp(_currentYRotation, -45f, 90f);
 

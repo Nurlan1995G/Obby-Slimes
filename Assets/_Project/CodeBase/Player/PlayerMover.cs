@@ -1,5 +1,4 @@
-﻿using Assets._Project.CodeBase.Player.Skin;
-using Assets.Project.CodeBase.Player.UI;
+﻿using Assets.Project.CodeBase.Player.UI;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -45,12 +44,6 @@ public class PlayerMover : MonoBehaviour
         _input.Player.Boost.started -= OnBoostInputStarted;
         _input.Player.Boost.canceled -= OnBoostInputCanceled;
     }
-
-    public void AgentEnable() =>
-        _agent.enabled = true;
-
-    public void AgentDisable() =>
-        _agent.enabled = false;
 
     public void OnBoostStarted()
     {

@@ -67,7 +67,7 @@ public class Bootstraper : MonoBehaviour
     private void InitPlayer(TopSharksManager topSharksManager, RespawnSlime respawnSlime,
         PlayerInput playerInput)
     {
-        _playerView.Construct(_positionStaticData, _gameConfig, _uiPopup, _boostButtonUI, _soundHandler, respawnSlime, playerInput, _language);
+        _playerView.Construct(_positionStaticData, _uiPopup, _boostButtonUI, _soundHandler, respawnSlime, _language);
         _playerView.Init(topSharksManager);
         _playerMover.Construct(_gameConfig.PlayerData, _boostButtonUI, playerInput);
     }
