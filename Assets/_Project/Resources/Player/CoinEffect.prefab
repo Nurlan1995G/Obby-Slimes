@@ -48,7 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 1
   _fadeSpeed: 0.8
-  _value: 0.1
   _coins: []
 --- !u!114 &3933863866035511628
 MonoBehaviour:

@@ -670,7 +670,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnButton: {fileID: 8352896928661745756}
-  revengeButton: {fileID: 4406198534820772625}
   _adTimer: {fileID: 0}
 --- !u!1 &8862187645473019483
 GameObject:

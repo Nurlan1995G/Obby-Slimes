@@ -159,7 +159,6 @@ MonoBehaviour:
   CapsuleCollider: {fileID: -5651559464567665131, guid: 214ed5362b9bb7d4587cc24422555f54, type: 3}
   _localScaleX: 0.2
   _crown: {fileID: 7812299852232925120}
-  _triggerSharkEnemy: {fileID: 2695391164324391165}
 --- !u!114 &1937350055557858813
 MonoBehaviour:
   m_ObjectHideFlags: 0

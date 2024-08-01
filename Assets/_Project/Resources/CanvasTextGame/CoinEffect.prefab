@@ -355,9 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 2
   _fadeSpeed: 1
-  _value: 0.1
-  CanvasGroup: {fileID: 7826569586119034829}
-  IsFadingOut: 0
+  _coins: []
 --- !u!114 &226574361770909975
 MonoBehaviour:
   m_ObjectHideFlags: 0

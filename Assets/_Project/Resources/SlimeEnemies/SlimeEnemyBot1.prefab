@@ -119,7 +119,6 @@ MonoBehaviour:
   CapsuleCollider: {fileID: 7176590284262822257}
   _localScaleX: 0.2
   _crown: {fileID: 4979826449640959523}
-  _triggerSharkEnemy: {fileID: 4692577689366000529}
 --- !u!114 &1310857465635334599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4689032488037621336, guid: 3b87ab771ced2524ca25ca2c865574dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a3b38d5f6d1f28949b4ba4c131887060, type: 3}
     - target: {fileID: 7444364271140153992, guid: 3b87ab771ced2524ca25ca2c865574dc, type: 3}
       propertyPath: m_IsActive
       value: 0
