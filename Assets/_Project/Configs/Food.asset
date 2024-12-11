@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9882611e25b0a7b4c9e8b825536568ef, type: 3}
+  m_Name: Food
+  m_EditorClassIdentifier: 
+  SpawnerFoodData:
+    SpawnCooldown: 0.001
+    MaxCountFood: 1580
+    CountFoodUnikZone: 300
+  FoodStaticData:
+    PurpleFoodPrefab: {fileID: 5342304770547023060, guid: c608eeb4dbc08944582b17cd61ddc4ac, type: 3}
+    ScalePrefabPurple: {x: 0.2, y: 0.2, z: 0.2}
+    MaxCountPurpleFood: 450
+    ScoreLevelPurple: 1
+    GreenFoodPrefab: {fileID: 3295905654225933523, guid: f56a1aca26ced944fbb9d632039ae68b, type: 3}
+    ScalePrefabGreen: {x: 0.2, y: 0.2, z: 0.2}
+    MaxCountGreenFood: 300
+    ScoreLevelGreen: 2
+    BlueFoodPrefab: {fileID: 636595536965434471, guid: cbf99cb83bad0a849b5926a049f4af1b, type: 3}
+    ScalePrefabBlue: {x: 0.2, y: 0.2, z: 0.2}
+    MaxCountBlueFood: 180
+    ScoreLevelBlue: 3
+    RedFoodPrefab: {fileID: 659123254327164286, guid: 285b132354905f34283f915e696f87c6, type: 3}
+    ScalePrefabRed: {x: 0.25, y: 0.25, z: 0.25}
+    MaxCountRedFood: 160
+    ScoreLevelRed: 4
+    YellowFoodPrefab: {fileID: 7791970636523095740, guid: 79dbb80cb64fcd440a87d72a33941f96, type: 3}
+    ScalePrefabYellow: {x: 0.3, y: 0.3, z: 0.3}
+    MaxCountYellowFood: 150
+    ScoreLevelYellow: 5
+    PinkFoodPrefab: {fileID: 963279508443894816, guid: 6ad923756e9b44048bbe5d070ef97401, type: 3}
+    ScalePrefabPink: {x: 0.35, y: 0.35, z: 0.35}
+    MaxCountPinkFood: 130
+    ScoreLevelPink: 6
+    GrayFoodPrefab: {fileID: 7693136601486335749, guid: 8300835e2b44fe64fadfe2a1d4d14b77, type: 3}
+    ScalePrefabGray: {x: 0.4, y: 0.4, z: 0.4}
+    MaxCountGrayFood: 110
+    ScoreLevelGray: 7
+    OrangeFoodPrefab: {fileID: 4580937556239515993, guid: 81c312b5b38e34c4fbe425262df1535b, type: 3}
+    ScalePrefabOrange: {x: 0.45, y: 0.45, z: 0.45}
+    MaxCountOrangeFood: 100
+    ScoreLevelOrange: 8
